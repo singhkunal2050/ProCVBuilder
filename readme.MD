@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/030c1681-d3ec-497a-8c89-f9cefbb37582/deploy-status)](https://app.netlify.com/sites/procvbuilder/deploys)
+
 # ProCVBuilder to get you into the best companies
 
 - MUI 
