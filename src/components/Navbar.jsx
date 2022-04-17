@@ -12,7 +12,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="text-fuchsia-700 md:text-slate-100 py-4 px-4 border-b-2 bg-fuchsia-600 top-0 z-10 sticky">
+    <nav className="text-fuchsia-700 md:text-slate-100 py-4 px-4 border-b-2 bg-gradient-to-r from-emerald-500 to-fuchsia-600 top-0 z-10 sticky">
       <Container>
         <section className="flex justify-between items-center">
           <div className="text-2xl font-extrabold z-20">
@@ -25,10 +25,10 @@ function Navbar() {
             </Link>
           </div>
           <div className="menu hidden md:flex">
-            <Link className="py-2 px-4   hover:bg-fuchsia-500" to="/">
+            <Link className="py-2 px-4 " to="/">
               Home
             </Link>
-            <Link className="py-2 px-4   hover:bg-fuchsia-500" to="/about">
+            <Link className="py-2 px-4" to="/about">
               About
             </Link>
           </div>
