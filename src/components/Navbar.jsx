@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Container from "./Container";
 import { Link } from "react-router-dom";
-import { AiFillMoneyCollect } from "react-icons/ai"
+import { AiFillMoneyCollect } from "react-icons/ai";
 
 function Navbar() {
   const [sidebarState, setsidebarState] = useState(false);
@@ -32,6 +32,9 @@ function Navbar() {
             </Link>
             <Link className="py-2 px-4" to="/about">
               About
+            </Link>
+            <Link className="py-2 px-4" to="/builder">
+              Builder
             </Link>
           </div>
 
@@ -63,6 +66,13 @@ function Navbar() {
               onClick={toogleSidebar}
             >
               About
+            </Link>
+            <Link
+              className="py-2 px-4   hover:bg-gray-100"
+              to="/builder"
+              onClick={toogleSidebar}
+            >
+              Builder
             </Link>
           </div>
         </section>
