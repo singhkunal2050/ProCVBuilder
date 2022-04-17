@@ -1,12 +1,9 @@
-import { Button } from "@mui/material";
-
 function App() {
   return (
-    <div className="App">
+    <div className="bg-red-400 p-4">
+      
       Hello world
-      <Button variant="contained" href="#contained-buttons">
         Link
-      </Button>
     </div>
   );
 }
