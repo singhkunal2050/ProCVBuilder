@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="bg-white px-2 py-10 text-fuchsia-700 border-t-2 border-fuchsia-700 fixed bottom-0 left-0 right-0">
       <Container>
-        <section className="flex justify-center">
+        <section className="flex items-center flex-col">
           <p className="text-center flex gap-1 mx-auto">
             Made with{" "}
             <svg
@@ -20,7 +20,9 @@ function Footer() {
                 clip-rule="evenodd"
               />
             </svg>{" "}
-            Using React & Node
+          </p>
+          <p>
+            Using React | TailwindCSS | Redux 
           </p>
         </section>
       </Container>
