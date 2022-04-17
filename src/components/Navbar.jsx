@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Container from "./Container";
 import { Link } from "react-router-dom";
+import { AiFillMoneyCollect } from "react-icons/ai"
 
 function Navbar() {
   const [sidebarState, setsidebarState] = useState(false);
@@ -19,8 +20,9 @@ function Navbar() {
             <Link
               to="/"
               onClick={() => setsidebarState(false)}
-              className="flex justify-center items-center z-20 text-white"
+              className="flex justify-center items-center z-20 text-white gap-1"
             >
+              <AiFillMoneyCollect />
               <h3>ProCVBuilder</h3>
             </Link>
           </div>
