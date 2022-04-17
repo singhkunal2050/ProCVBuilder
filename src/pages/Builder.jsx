@@ -1,8 +1,14 @@
 import React from 'react'
+import Container from '../components/Container'
+import ResumeBuilder from '../components/ResumeBuilder'
 
 function Builder() {
   return (
-    <div>Builder</div>
+    <div>
+      <Container>
+        <ResumeBuilder />
+      </Container>
+    </div>
   )
 }
 

@@ -10,7 +10,7 @@ function App() {
     <>
       <Router>
         <Navbar />
-        <main>
+        <main className="min-h-[70vh]">
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
