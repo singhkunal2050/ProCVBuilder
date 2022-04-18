@@ -3,12 +3,11 @@ import { Header, Preview, Editor } from "./Builder"
 
 function ResumeBuilder() {
   const resumeRef = useRef();
-  const [template, settemplate] = useState(false);
 
   return (
     <section className="py-8">
-      <Header state={{ template, settemplate }} />
-      <Preview state={{ template, resumeRef }} />
+      <Header />
+      <Preview state={{ resumeRef }} />
       <Editor />
     </section>
   );
