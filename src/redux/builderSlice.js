@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const builderSlice = createSlice({
     name: "builder",
     initialState: {
-        personal: { firstName: '', lastName: '', email: '' },
+        personal: { firstName: 'Mike', lastName: 'Alpha', email: 'mikealpha@gmail.com' },
         education: {},
         experience: {},
         skills: {},
