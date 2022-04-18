@@ -21,7 +21,7 @@ function ResumeBuilder() {
       />
 
       <section className="flex items-stretch min-h-[1200px]">
-        <div  ref={resumeRef}>
+        <div className="flex-1"  ref={resumeRef}>
           <Resume />
         </div>
         <ResumeEditor />
