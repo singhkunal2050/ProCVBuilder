@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 
 function Resume2() {
   return (
-    <section className="border-2 border-indigo-300 border-l-8 border-l-indigo-800 dark:bg-slate-800 dark:text-gray-200 flex-1 p-2">
+    <section className="border-2 border-indigo-300 border-l-8 border-l-indigo-800 flex-1 p-2">
       <section className="top-section flex flex-col items-center">
         <div className="flex flex-col text-center dark:border-indigo-900 p-2  ">
           <h2 className="text-4xl font-bold text-indigo-600  ">Sameer Singh</h2>
