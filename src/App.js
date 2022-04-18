@@ -19,7 +19,7 @@ function App() {
           <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;600&display=swap" rel="stylesheet"/>
       </Helmet>
         <Navbar />
-        <main className="min-h-[70vh] font-sora">
+        <main className="min-h-[70vh] font-sora dark:bg-slate-800 dark:text-gray-200">
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

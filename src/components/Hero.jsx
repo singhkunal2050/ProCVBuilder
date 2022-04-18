@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Hero() {
   return (
     <header>
-      <div className="flex flex-col justify-center items-center py-20 md:py-40 bg-[url('//source.unsplash.com/600x700?job')] bg-cover bg-emerald-300 bg-blend-multiply ">
+      <div className="flex flex-col justify-center items-center py-20 md:py-40 bg-[url('//source.unsplash.com/600x700?job')] bg-cover bg-emerald-800 bg-blend-multiply ">
         <Container>
           <div className="flex justify-center items-center h-full">
             <div className="text-center text-white px-6 md:px-12">

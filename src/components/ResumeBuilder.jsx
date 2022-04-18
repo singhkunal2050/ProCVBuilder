@@ -1,5 +1,5 @@
-import React from "react";
-import Resume from "./Resume";
+// import Resume from "./Resume";
+import Resume2 from "./Resume2";
 import ResumeEditor from "./ResumeEditor";
 import { useRef } from "react";
 import ReactToPrint from "react-to-print";
@@ -22,7 +22,8 @@ function ResumeBuilder() {
 
       <section className="flex items-stretch min-h-[1200px]">
         <div className="flex-1"  ref={resumeRef}>
-          <Resume />
+          {/* <Resume /> */}
+          <Resume2 />
         </div>
         <ResumeEditor />
       </section>
