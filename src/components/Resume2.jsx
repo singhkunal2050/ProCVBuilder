@@ -93,11 +93,6 @@ function Resume2() {
               <p>2016 -2018</p>
             </article>
 
-            <article className=" border-2 border-indigo-100 dark:border-indigo-900 p-2">
-              <h3 className="text-lg font-bold">BTech</h3>
-              <p>Pune University</p>
-              <p>2018 -2022</p>
-            </article>
           </div>
         </div>
         <div className="right ">
