@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
-import { setPersonal } from '../../redux/builderSlice';
+import { setPersonal } from '../../../redux/builderSlice';
 
 const PersonalSchema = Yup.object().shape({
     firstName: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
@@ -9,7 +9,6 @@ const PersonalSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
 });
 
-console.log(PersonalSchema);
 
 export function Personal() {
     const dispatch = useDispatch()
