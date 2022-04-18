@@ -9,6 +9,8 @@ const PersonalSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
 });
 
+console.log(PersonalSchema);
+
 export function Personal() {
     const dispatch = useDispatch()
     const personal = useSelector(state => state.personal)
