@@ -45,6 +45,29 @@ function Resume() {
               <p>Jan-20 - Dec-22</p>
             </article>
           </div>
+          <div className="education">
+            <h2 className="text-2xl font-bold capitalize mb-1 p-2">
+              Education
+            </h2>
+            <article className=" border-2 border-red-200 p-2">
+              <h3 className="text-lg font-bold">BTech</h3>
+              <p>Pune University</p>
+              <p>2018 -2022</p>
+            </article>
+           
+            <article className=" border-2 border-red-200 p-2">
+              <h3 className="text-lg font-bold">BTech</h3>
+              <p>Pune University</p>
+              <p>2018 -2022</p>
+            </article>
+           
+            <article className=" border-2 border-red-200 p-2">
+              <h3 className="text-lg font-bold">BTech</h3>
+              <p>Pune University</p>
+              <p>2018 -2022</p>
+            </article>
+           
+          </div>
         </div>
         <div className="right ">
           <div className="skills">
