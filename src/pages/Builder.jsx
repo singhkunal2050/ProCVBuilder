@@ -4,11 +4,9 @@ import ResumeBuilder from '../components/ResumeBuilder'
 
 function Builder() {
   return (
-    <div>
-      <Container>
-        <ResumeBuilder />
-      </Container>
-    </div>
+    <Container>
+      <ResumeBuilder />
+    </Container>
   )
 }
 
