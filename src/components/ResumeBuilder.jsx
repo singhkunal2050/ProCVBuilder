@@ -6,7 +6,7 @@ function ResumeBuilder() {
 
   return (
     <section className="py-8">
-      <Header />
+      <Header  state={{ resumeRef }}  />
       <Preview state={{ resumeRef }} />
       <Editor />
     </section>

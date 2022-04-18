@@ -1,20 +1,20 @@
-import React, { Suspense, useState } from 'react';
+import React, { Suspense, useState } from "react";
 import { useEditor } from "../../context/EditorContext";
 
 export function Preview({ state }) {
-    const { resumeRef } = state
-    const { editor, layout, setLayout } = useEditor();
+  const { resumeRef } = state;
+  const { editor, layout, setLayout } = useEditor();
 
-    const OtherComponent = React.lazy(() => import('../Layouts/' + layout));
+  const CurrentLayout = React.lazy(() => import("../Layouts/" + layout));
 
-    return (
-        <section className="min-h-[1200px]">
-            <div ref={resumeRef}>
-                <Suspense fallback={<div>Loading...</div>}>
-                    <OtherComponent data={editor} />
-                </Suspense>
-                {/* {template ? <Resume /> : <Resume2 />} */}
-            </div>
-        </section>
-    )
+  return (
+    <section className="min-h-[1200px]">
+      <Suspense fallback={<div>Loading...</div>}>
+        <div ref={resumeRef}>
+          <CurrentLayout data={editor} />
+        </div>
+      </Suspense>
+      {/* {template ? <Resume /> : <Resume2 />} */}
+    </section>
+  );
 }

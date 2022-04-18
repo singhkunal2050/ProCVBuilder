@@ -2,9 +2,8 @@ import { useRef } from "react";
 import ReactToPrint from "react-to-print";
 import { useEditor } from "../../context/EditorContext";
 
-export function Header() {
-    const resumeRef = useRef();
-
+export function Header({ state }) {
+     const { resumeRef } = state;
     const { setLayout } = useEditor();
 
     const SwitchLayout = (e) => {
@@ -26,7 +25,7 @@ export function Header() {
                 content={() => resumeRef.current}
             />
 
-            <select onChange={SwitchLayout}>
+            <select className="p-2 dark:bg-slate-700" onChange={SwitchLayout}>
                 <option value="" disabled>Choose Layout</option>
                 <option value="L1">L1</option>
                 <option value="L2">L2</option>

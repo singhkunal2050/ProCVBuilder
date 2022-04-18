@@ -33,15 +33,15 @@ export function Personal() {
                 {({ errors, touched, isSubmitting }) => (
                     <Form>
                         <div className="flex flex-col mb-2">
-                            <Field name="firstname" type="text" placeholder="First name" className={`focus:outline-none border-b p-2 ${errors.firstname && touched.firstname ? 'is-invalid' : ''}`} />
-                            {errors.firstname && touched.firstname && <div className="invalid-feedback text-xs text-red-700 font-semibold my-1">{errors.firstname}</div>}
+                            <Field name="firstname" type="text" placeholder="First name" className={`dark:bg-slate-600 focus:outline-none border-b p-2 ${errors.firstname && touched.firstname ? 'is-invalid' : ''}`} />
+                            {errors.firstname && touched.firstname && <div className=" invalid-feedback text-xs text-red-700 font-semibold my-1">{errors.firstname}</div>}
                         </div>
                         <div className="flex flex-col mb-2">
-                            <Field name="lastname" type="text" placeholder="Last name" className={`focus:outline-none border-b p-2 ${errors.lastname && touched.lastname ? 'is-invalid' : ''}`} />
+                            <Field name="lastname" type="text" placeholder="Last name" className={`dark:bg-slate-600 Mikefocus:outline-none border-b p-2 ${errors.lastname && touched.lastname ? 'is-invalid' : ''}`} />
                             {errors.lastname && touched.lastname && <div className="invalid-feedback text-xs text-red-700 font-semibold my-1">{errors.lastname}</div>}
                         </div>
                         <div className="flex flex-col mb-2">
-                            <Field name="email" type="text" placeholder="Email" className={`focus:outline-none border-b p-2 ${errors.email && touched.email ? 'is-invalid' : ''}`} />
+                            <Field name="email" type="text" placeholder="Email" className={`dark:bg-slate-600 focus:outline-none border-b p-2 ${errors.email && touched.email ? 'is-invalid' : ''}`} />
                             {errors.email && touched.email && <div className="invalid-feedback text-xs text-red-700 font-semibold my-1">{errors.email}</div>}
                         </div>
                         <div className="flex flex-col mb-2">
