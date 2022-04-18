@@ -16,12 +16,19 @@ function ResumeBuilder() {
 
       <ReactToPrint
         trigger={() => (
-          <button className="bg-fuchsia-300 text-black font-bold p-2 mx-auto">Print</button>
+          <button className="bg-fuchsia-300 text-black font-bold p-2 mx-auto">
+            Print
+          </button>
         )}
         content={() => resumeRef.current}
       />
 
-      <button className="ml-6 bg-fuchsia-300 text-black font-bold p-2 mx-auto" onClick={() => settemplate(!template)}>Toggle Template</button>
+      <button
+        className="ml-6 bg-fuchsia-300 text-black font-bold p-2 mx-auto"
+        onClick={() => settemplate(!template)}
+      >
+        Toggle Template
+      </button>
       <section className="flex items-stretch min-h-[1200px]">
         <div className="flex-1" ref={resumeRef}>
           {template ? <Resume /> : <Resume2 />}
