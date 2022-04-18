@@ -14,7 +14,7 @@ export function Preview({ state }) {
           <CurrentLayout data={editor} />
         </div>
       </Suspense>
-      {/* {template ? <Resume /> : <Resume2 />} */}
+
     </section>
   );
 }

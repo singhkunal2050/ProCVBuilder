@@ -2,7 +2,7 @@ import { FaFacebook, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 
 export default function L2({ data }) {
-  const { firstname, lastname, email } = data.personal;
+  const { firstname, lastname, email, phone } = data.personal;
   return (
     <section className="border-2 border-indigo-300 border-l-8 border-l-indigo-800 flex-1 p-2">
       <section className="top-section flex flex-col items-center">
@@ -13,10 +13,10 @@ export default function L2({ data }) {
         </div>
         <div className="flex-1 py-2 dark:border-indigo-900 flex gap-4">
           <p>{email}</p>
-          <p>8888888888</p>
+          <p>{phone}</p>
           <div className="flex flex-row-reverse gap-2 items-center">
             <div className="flex gap-1 text-indigo-600">
-              <FaFacebook />
+              <a href={'/'}><FaFacebook /></a>
               <FaGithub />
               <FaLinkedin /> <FaTwitter />
             </div>
@@ -101,8 +101,12 @@ export default function L2({ data }) {
               Skills
             </h2>
             <article className="border-2 border-indigo-100 dark:border-indigo-900 flex gap-2 flex-wrap p-2">
+              
+              
+
+
               <span className="py-[2px] px-1 text-sm rounded-lg bg-indigo-100 dark:bg-indigo-700 dark:text-white">
-                HTML
+                PHP
               </span>
               <span className="py-[2px] px-1 text-sm rounded-lg bg-indigo-100 dark:bg-indigo-700 dark:text-white">
                 CSS

@@ -14,8 +14,15 @@ export function EditorProvider(props) {
         personal: {
             firstname: "Mike",
             lastname: "Alpha",
-            email: "mikealpha@gmail.com"
-        }
+            email: "mikealpha@gmail.com",
+            phone: "9999999999",
+            website : "demo.com",
+            facebookLink : "facebook.com",
+            twitterLink : "twitter.com",
+            linkedinLink : "linkedin.com",
+            githubLink : "github.com",
+        },
+        skills: ['HTML' , 'CSS' , 'Javascript', 'nodejs' , 'Mongodb' ]
     })
 
 
