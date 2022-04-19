@@ -14,7 +14,7 @@ export function Skills() {
     console.log(values)
     setEditor({
       ...editor,
-      skills: [ ...editor.skills , ...values ]
+      skills: [ ...editor.skills ]
     });
     actions.setSubmitting(false);
   };
