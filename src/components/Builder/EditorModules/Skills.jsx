@@ -1,60 +1,72 @@
-import { Field, Formik, Form } from "formik";
+import { Field, FieldArray, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useEditor } from "../../../context/EditorContext";
 
 const SkillsSchema = Yup.object().shape({
-  list: Yup.array().of(Yup.string()),
+  skills: Yup.array().of(Yup.string().required("Required")),
 });
 
 export function Skills() {
   const { editor, setEditor } = useEditor();
- 
+
   const handleSubmit = (values, actions) => {
     actions.setSubmitting(true);
-    console.log(values)
+    console.log(values);
+
     setEditor({
       ...editor,
-      skills: [ ...editor.skills ]
+      skills: values.skills,
     });
+    console.log(editor);
     actions.setSubmitting(false);
   };
- 
   return (
-    <div>
-      <h3 className="font-bold text-xl cursor-pointer p-2">Skills</h3>
-
+    <div className="pb-4 mb-4 border-b">
+      <h3 className="font-bold text-xl cursor-pointer p-2">Personal</h3>
       <Formik
-        initialValues={editor.skills}
+        initialValues={{ skills: editor.skills }}
         validationSchema={SkillsSchema}
         onSubmit={handleSubmit}
       >
-        {({ errors, touched, isSubmitting }) => (
+        {({ values, errors, touched }) => (
           <Form>
-
-            <div className="flex flex-col mb-2">
-              <Field
-                name="skills"
-                type="text"
-                placeholder="First name"
-                className={`dark:bg-slate-600 focus:outline-none border-b p-2 ${
-                  errors.skills && touched.skills ? "is-invalid" : ""
-                }`}
-              />
-              {errors.skills && touched.skills && (
-                <div className=" invalid-feedback text-xs text-red-700 font-semibold my-1">
-                  {errors.skills}
+            <FieldArray name="skills">
+              {(arrayHelpers) => (
+                <div>
+                  {values.skills && values.skills.length > 0 ? (
+                    values.skills.map((friend, index) => (
+                      <div key={index}>
+                        <Field
+                          name={`skills.${index}`}
+                          className="dark:bg-slate-600 py-2 px-3 border-b-2 mb-2"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => arrayHelpers.remove(index)} // remove a friend from the list
+                        >
+                          x
+                        </button>
+                        {index == 0 && (
+                          <button
+                            type="button"
+                            onClick={() => arrayHelpers.insert(index, "")} // insert an empty string at a position
+                          >
+                            +
+                          </button>
+                        )}
+                      </div>
+                    ))
+                  ) : (
+                    <button type="button" onClick={() => arrayHelpers.push("")}>
+                      Add a Skill
+                    </button>
+                  )}
+                  <div>
+                    <button type="submit">Submit</button>
+                  </div>
                 </div>
               )}
-            </div>
-
-            <div className="flex flex-col mb-2">
-              <button
-                type="submit"
-                className="rounded bg-gradient-to-r from-emerald-500 to-fuchsia-500 text-white p-2 font-semibold text-sm"
-              >
-                Update
-              </button>
-            </div>
+            </FieldArray>
           </Form>
         )}
       </Formik>

@@ -22,7 +22,7 @@ export function EditorProvider(props) {
             linkedinLink : "linkedin.com",
             githubLink : "github.com",
         },
-        skills: ['HTML'  ]
+        skills: ['HTML' , 'CSS' , 'Javascript', 'nodejs' , 'Mongodb' ]
     })
 
 
