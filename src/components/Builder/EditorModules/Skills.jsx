@@ -1,6 +1,7 @@
 import { Field, FieldArray, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useEditor } from "../../../context/EditorContext";
+import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 
 const SkillsSchema = Yup.object().shape({
   skills: Yup.array().of(Yup.string().required("Required")),
@@ -39,10 +40,11 @@ export function Skills() {
                         {index == 0 && (
                           <button
                             type="button"
-                            className="col-span-2 p-2 "
+                            className="col-span-2 p-2 flex gap-2 items-center  "
                             onClick={() => arrayHelpers.insert(index, "")} // insert an empty string at a position
                           >
-                            Add Skill +
+                            Add Skill
+                            <AiOutlinePlus />
                           </button>
                         )}
 
@@ -55,7 +57,7 @@ export function Skills() {
                             type="button"
                             onClick={() => arrayHelpers.remove(index)} // remove a friend from the list
                           >
-                            x
+                            <AiOutlineClose />
                           </button>
                         </div>
                       </>
@@ -65,8 +67,13 @@ export function Skills() {
                       Add a Skill
                     </button>
                   )}
-                  <div>
-                    <button type="submit">Submit</button>
+                  <div className="flex flex-col mb-2 col-span-2 mt-2">
+                    <button
+                      type="submit"
+                      className="rounded bg-gradient-to-r from-emerald-500 to-fuchsia-500 text-white p-2 font-semibold text-sm"
+                    >
+                      Update
+                    </button>
                   </div>
                 </div>
               )}

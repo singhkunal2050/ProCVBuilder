@@ -15,8 +15,6 @@ export default function L1({ data }) {
   } = data.personal;
   const { skills } = data;
 
-
- 
   return (
     <section className="border-2 border-emerald-300 dark:bg-slate-800 dark:text-gray-200 flex-1 p-2">
       <section className="top-section flex">
@@ -62,7 +60,7 @@ export default function L1({ data }) {
         </div>
       </section>
       <section className="middle-section border-2 border-emerald-100 dark:border-emerald-900 grid grid-cols-60/40 ">
-        <div className="left hidden">
+        <div className="left">
           <div className="experiences">
             <h2 className="text-2xl font-bold capitalize mb-1 p-2 text-emerald-600">
               Experiences
@@ -142,25 +140,11 @@ export default function L1({ data }) {
               Skills
             </h2>
             <article className="border-2 border-emerald-100 dark:border-emerald-900 flex gap-2 flex-wrap p-2">
-                {JSON.stringify(skills)}
-              <span className="py-[2px] px-1 text-sm rounded-lg bg-emerald-100 dark:bg-emerald-700 dark:text-white">
-               PHP
-              </span>
-              <span className="py-[2px] px-1 text-sm rounded-lg bg-emerald-100 dark:bg-emerald-700 dark:text-white">
-                CSS
-              </span>
-              <span className="py-[2px] px-1 text-sm rounded-lg bg-emerald-100 dark:bg-emerald-700 dark:text-white">
-                Javascript
-              </span>
-              <span className="py-[2px] px-1 text-sm rounded-lg bg-emerald-100 dark:bg-emerald-700 dark:text-white">
-                React
-              </span>
-              <span className="py-[2px] px-1 text-sm rounded-lg bg-emerald-100 dark:bg-emerald-700 dark:text-white">
-                Java
-              </span>
-              <span className="py-[2px] px-1 text-sm rounded-lg bg-emerald-100 dark:bg-emerald-700 dark:text-white">
-                Python
-              </span>
+              {skills.map((skill, index) => (
+                <span key={index} className="py-[2px] px-1 text-sm rounded-lg bg-emerald-100 dark:bg-emerald-700 dark:text-white">
+                  {skill}
+                </span>
+              ))}
             </article>
           </div>
           <div className="certifications">
