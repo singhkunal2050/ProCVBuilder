@@ -40,7 +40,7 @@ export function Languages() {
                   <div className="grid grid-cols-2">
                     {values.languages && values.languages.length > 0 ? (
                       values.languages.map((friend, index) => (
-                        <div key={index}>
+                        <div key={index} className="self-end">
                           {index === 0 && (
                             <button
                               type="button"
