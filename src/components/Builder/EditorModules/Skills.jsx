@@ -36,7 +36,7 @@ export function Skills() {
                 <div className="grid grid-cols-2">
                   {values.skills && values.skills.length > 0 ? (
                     values.skills.map((friend, index) => (
-                      <>
+                      <div  key={index}>
                         {index == 0 && (
                           <button
                             type="button"
@@ -60,7 +60,7 @@ export function Skills() {
                             <AiOutlineClose />
                           </button>
                         </div>
-                      </>
+                      </div>
                     ))
                   ) : (
                     <button type="button" onClick={() => arrayHelpers.push("")}>
