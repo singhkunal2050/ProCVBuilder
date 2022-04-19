@@ -46,6 +46,7 @@ export function EditorProvider(props) {
         ],
       },
     ],
+    languages : ["English", "Hindi", "Marathi"],
   });
 
   const value = {

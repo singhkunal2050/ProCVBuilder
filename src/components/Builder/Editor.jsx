@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Personal, Experience, Education, Skills } from './EditorModules'
+import { Personal, Experience, Education, Skills , Languages } from './EditorModules'
 
 export function Editor() {
     const [open, setOpen] = useState(true)
@@ -13,6 +13,7 @@ export function Editor() {
             <div className='p-4 max-h-screen  overflow-y-auto'>
                 <Personal />
                 <Skills />
+                <Languages />
                 <Experience />
                 <Education />
             </div>

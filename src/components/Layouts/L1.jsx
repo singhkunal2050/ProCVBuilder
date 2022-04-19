@@ -13,7 +13,7 @@ export default function L1({ data }) {
     linkedinLink,
     githubLink,
   } = data.personal;
-  const { skills } = data;
+  const { skills , languages } = data;
 
   return (
     <section className="border-2 border-emerald-300 dark:bg-slate-800 dark:text-gray-200 flex-1 p-2">
@@ -204,18 +204,13 @@ export default function L1({ data }) {
               Languages
             </h2>
             <article className="border-2 border-emerald-100 dark:border-emerald-900 flex gap-2 flex-wrap p-2">
-              <span className="py-[2px] px-1 text-sm rounded-lg bg-emerald-100 dark:bg-emerald-700 dark:text-white">
-                English
-              </span>
-              <span className="py-[2px] px-1 text-sm rounded-lg bg-emerald-100 dark:bg-emerald-700 dark:text-white">
-                Hindi
-              </span>
-              <span className="py-[2px] px-1 text-sm rounded-lg bg-emerald-100 dark:bg-emerald-700 dark:text-white">
-                Marathi
-              </span>
-              <span className="py-[2px] px-1 text-sm rounded-lg bg-emerald-100 dark:bg-emerald-700 dark:text-white">
-                Gujarati
-              </span>
+              
+              {languages.map((language, index) => (
+                <span key={index} className="py-[2px] px-1 text-sm rounded-lg bg-emerald-100 dark:bg-emerald-700 dark:text-white">
+                  {language}
+                </span>
+              ))}
+              
             </article>
           </div>
         </div>
