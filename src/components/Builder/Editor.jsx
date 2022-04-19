@@ -15,7 +15,6 @@ export function Editor() {
                 <Skills />
                 <Experience />
                 <Education />
-                <FriendList/>
             </div>
         </section>
     )
