@@ -2,6 +2,7 @@ import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useEditor } from "../../../context/EditorContext";
 import { useState  } from "react";
+import { AiOutlineUser } from "react-icons/ai";
 
 const PersonalSchema = Yup.object().shape({
   firstname: Yup.string()
@@ -41,7 +42,7 @@ export function Personal() {
   };
   return (
     <div className="pb-4 mb-4 border-b">
-      <h3 className="font-bold text-xl cursor-pointer p-2" onClick={()=>setshow(!show)}>Personal</h3>
+      <h3 className="font-bold text-xl cursor-pointer p-2 flex gap-2 items-center" onClick={()=>setshow(!show)}>Persona <AiOutlineUser/></h3>
       <div className={`option ${!show && 'hidden'}`}>
         <Formik
           initialValues={editor.personal}
