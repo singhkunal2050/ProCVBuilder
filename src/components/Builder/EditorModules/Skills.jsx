@@ -23,7 +23,7 @@ export function Skills() {
   };
   return (
     <div className="pb-4 mb-4 border-b">
-      <h3 className="font-bold text-xl cursor-pointer p-2">Personal</h3>
+      <h3 className="font-bold text-xl cursor-pointer p-2">Skills</h3>
       <Formik
         initialValues={{ skills: editor.skills }}
         validationSchema={SkillsSchema}
@@ -60,11 +60,12 @@ export function Skills() {
                             <AiOutlineClose />
                           </button>
                         </div>
+                        
                       </div>
                     ))
                   ) : (
-                    <button type="button" onClick={() => arrayHelpers.push("")}>
-                      Add a Skill
+                    <button type="button" className="flex gap-2 items-center" onClick={() => arrayHelpers.push("")}>
+                      Add a Skill      <AiOutlinePlus />
                     </button>
                   )}
                   <div className="flex flex-col mb-2 col-span-2 mt-2">
