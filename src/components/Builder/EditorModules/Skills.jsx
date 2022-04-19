@@ -32,29 +32,33 @@ export function Skills() {
           <Form>
             <FieldArray name="skills">
               {(arrayHelpers) => (
-                <div>
+                <div className="grid grid-cols-2">
                   {values.skills && values.skills.length > 0 ? (
                     values.skills.map((friend, index) => (
-                      <div key={index}>
-                        <Field
-                          name={`skills.${index}`}
-                          className="dark:bg-slate-600 py-2 px-3 border-b-2 mb-2"
-                        />
-                        <button
-                          type="button"
-                          onClick={() => arrayHelpers.remove(index)} // remove a friend from the list
-                        >
-                          x
-                        </button>
+                      <>
                         {index == 0 && (
                           <button
                             type="button"
+                            className="col-span-2 p-2 "
                             onClick={() => arrayHelpers.insert(index, "")} // insert an empty string at a position
                           >
-                            +
+                            Add Skill +
                           </button>
                         )}
-                      </div>
+
+                        <div key={index} className="flex gap-2 items-center">
+                          <Field
+                            name={`skills.${index}`}
+                            className="dark:bg-slate-600 max-w-[120px]  py-1 rounded-lg px-2 border-b-2 mb-2"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => arrayHelpers.remove(index)} // remove a friend from the list
+                          >
+                            x
+                          </button>
+                        </div>
+                      </>
                     ))
                   ) : (
                     <button type="button" onClick={() => arrayHelpers.push("")}>
