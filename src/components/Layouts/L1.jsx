@@ -31,7 +31,7 @@ export default function L1({ data }) {
           <div className="flex flex-col">
             <div className="flex gap-1 justify-end">
               {facebookLink && (
-                <a target="_blank" href={"//" + facebookLink}>
+                <a target="_blank" rel="noreferrer" href={"//" + facebookLink}>
                   <FaFacebook />
                 </a>
               )}
@@ -52,7 +52,7 @@ export default function L1({ data }) {
               )}
             </div>
             {website && (
-              <a target="_blank" href={"//" + website}>
+              <a target="_blank" rel="noreferrer" href={"//" + website}>
                 {website}
               </a>
             )}

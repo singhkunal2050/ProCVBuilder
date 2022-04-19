@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { FriendList } from '../dummy'
 import { Personal, Experience, Education, Skills } from './EditorModules'
 
 export function Editor() {
@@ -14,9 +13,9 @@ export function Editor() {
             <div className='p-4 max-h-screen  overflow-y-auto'>
                 <Personal />
                 <Skills />
-                {/* <Experience />
+                <Experience />
                 <Education />
-                <FriendList/> */}
+                <FriendList/>
             </div>
         </section>
     )

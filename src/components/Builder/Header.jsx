@@ -1,9 +1,8 @@
-import { useRef } from "react";
 import ReactToPrint from "react-to-print";
 import { useEditor } from "../../context/EditorContext";
 
 export function Header({ state }) {
-     const { resumeRef } = state;
+ const { resumeRef } = state;
     const { setLayout } = useEditor();
 
     const SwitchLayout = (e) => {

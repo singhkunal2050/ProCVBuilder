@@ -37,7 +37,7 @@ export function Skills() {
                   {values.skills && values.skills.length > 0 ? (
                     values.skills.map((friend, index) => (
                       <div  key={index}>
-                        {index == 0 && (
+                        {index === 0 && (
                           <button
                             type="button"
                             className="col-span-2 p-2 flex gap-2 items-center  "

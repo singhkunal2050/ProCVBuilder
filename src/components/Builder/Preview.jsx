@@ -1,9 +1,9 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense } from "react";
 import { useEditor } from "../../context/EditorContext";
 
 export function Preview({ state }) {
   const { resumeRef } = state;
-  const { editor, layout, setLayout } = useEditor();
+  const { editor, layout } = useEditor();
 
   const CurrentLayout = React.lazy(() => import("../Layouts/" + layout));
 
