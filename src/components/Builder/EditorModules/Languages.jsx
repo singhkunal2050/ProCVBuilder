@@ -11,7 +11,7 @@ const LanguagesSchema = Yup.object().shape({
 
 export function Languages() {
   const { editor, setEditor } = useEditor();
-  const [show, setshow] = useState(true);
+  const [show, setshow] = useState(false);
 
   const handleSubmit = (values, actions) => {
     actions.setSubmitting(true);

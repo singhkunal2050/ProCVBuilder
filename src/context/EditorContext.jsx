@@ -47,6 +47,23 @@ export function EditorProvider(props) {
         ],
       },
     ],
+    certifications: [
+      {
+        name: "AWS Certified Solutions Architect - Associate",
+        institute : "Amazon Web Services",
+        year : 2020
+      },
+      {
+        name: "AWS Certified Solutions Architect - Developer",
+        institute : "Amazon Web Services",
+        year : 2020
+      },
+      {
+        name: "AWS Certified Solutions Architect - Tester",
+        institute : "Amazon Web Services",
+        year : 2021
+      }
+    ],
     languages : ["English", "Hindi", "Marathi"],
   });
 

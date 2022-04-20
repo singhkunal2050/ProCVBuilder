@@ -10,7 +10,7 @@ const SkillsSchema = Yup.object().shape({
 
 export function Skills() {
   const { editor, setEditor } = useEditor();
-  const [show, setshow] = useState(true);
+  const [show, setshow] = useState(false);
 
   const handleSubmit = (values, actions) => {
     actions.setSubmitting(true);

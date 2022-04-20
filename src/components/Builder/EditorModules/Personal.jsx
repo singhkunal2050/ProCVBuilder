@@ -27,7 +27,7 @@ const PersonalSchema = Yup.object().shape({
 
 export function Personal() {
   const { editor, setEditor } = useEditor();
-  const [show, setshow] = useState(true)
+  const [show, setshow] = useState(false)
 
   const handleSubmit = (values, actions) => {
     actions.setSubmitting(true);
@@ -42,7 +42,7 @@ export function Personal() {
   };
   return (
     <div className="pb-4 mb-4 border-b">
-      <h3 className="font-bold text-xl cursor-pointer p-2 flex gap-2 items-center" onClick={()=>setshow(!show)}>Persona <AiOutlineUser/></h3>
+      <h3 className="font-bold text-xl cursor-pointer p-2 flex gap-2 items-center" onClick={()=>setshow(!show)}>Personal <AiOutlineUser/></h3>
       <div className={`option ${!show && 'hidden'}`}>
         <Formik
           initialValues={editor.personal}

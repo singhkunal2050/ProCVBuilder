@@ -4,7 +4,7 @@ import { AiOutlineBgColors } from "react-icons/ai";
 import { useEditor } from "../../../context/EditorContext";
 
 function ColorScheme() {
-  const [show, setshow] = useState(true);
+  const [show, setshow] = useState(false);
   const { editor, setEditor } = useEditor();
   const [color, setColor] = useState("");
 
