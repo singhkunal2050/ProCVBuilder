@@ -54,7 +54,7 @@ export function Skills() {
                           <div key={index} className="flex gap-2 items-center">
                             <Field
                               name={`skills.${index}`}
-                              className="dark:bg-slate-600 max-w-[120px]  py-1 rounded-lg px-2 border-b-2 mb-2"
+                              className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 max-w-[120px]  py-1 rounded-lg px-2 border-b-2 mb-2"
                             />
                             <button
                               type="button"

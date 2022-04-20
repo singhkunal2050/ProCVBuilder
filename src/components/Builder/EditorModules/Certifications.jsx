@@ -53,17 +53,20 @@ function Certifications() {
                             )}
 
                             <Field
-                              className="dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
+                              className=" bg-slate-100 border-b-slate-500 mt-2  dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
+                              placeholder = "Certification Name"
                               name={`certificaitons.${index}.name`}
                               values={cert.name}
                             />
                             <Field
-                              className="dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
+                              className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
+                              placeholder = "Institute"
                               name={`certificaitons.${index}.institute`}
                               values={cert.institute}
                             />
                             <Field
-                              className="dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
+                              className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
+                              placeholder = "Year"
                               name={`certificaitons.${index}.year`}
                               values={cert.year}
                             />

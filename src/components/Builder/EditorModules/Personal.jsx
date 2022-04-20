@@ -56,7 +56,7 @@ export function Personal() {
                   name="firstname"
                   type="text"
                   placeholder="First name"
-                  className={`dark:bg-slate-600 focus:outline-none border-b p-2 ${
+                  className={`bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 ${
                     errors.firstname && touched.firstname ? "is-invalid" : ""
                   }`}
                 />
@@ -71,7 +71,7 @@ export function Personal() {
                   name="lastname"
                   type="text"
                   placeholder="Last name"
-                  className={`dark:bg-slate-600 Mikefocus:outline-none border-b p-2 ${
+                  className={`bg-slate-100 border-b-slate-500 dark:bg-slate-600 Mikefocus:outline-none border-b p-2 ${
                     errors.lastname && touched.lastname ? "is-invalid" : ""
                   }`}
                 />
@@ -86,7 +86,7 @@ export function Personal() {
                   name="email"
                   type="text"
                   placeholder="Email"
-                  className={`dark:bg-slate-600 focus:outline-none border-b p-2 ${
+                  className={`bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 ${
                     errors.email && touched.email ? "is-invalid" : ""
                   }`}
                 />
@@ -101,7 +101,7 @@ export function Personal() {
                   name="phone"
                   type="text"
                   placeholder="Phone"
-                  className={`dark:bg-slate-600 focus:outline-none border-b p-2 ${
+                  className={`bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 ${
                     errors.phone && touched.phone ? "is-invalid" : ""
                   }`}
                 />
@@ -117,7 +117,7 @@ export function Personal() {
                   name="website"
                   type="text"
                   placeholder="website"
-                  className={`dark:bg-slate-600 focus:outline-none border-b p-2 ${
+                  className={`bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 ${
                     errors.website && touched.website ? "is-invalid" : ""
                   }`}
                 />
@@ -133,7 +133,7 @@ export function Personal() {
                   name="linkedinLink"
                   type="text"
                   placeholder="linkedinLink"
-                  className={`dark:bg-slate-600 focus:outline-none border-b p-2 ${
+                  className={`bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 ${
                     errors.linkedinLink && touched.linkedinLink
                       ? "is-invalid"
                       : ""
@@ -150,7 +150,7 @@ export function Personal() {
                   name="facebookLink"
                   type="text"
                   placeholder="facebookLink"
-                  className={`dark:bg-slate-600 focus:outline-none border-b p-2 ${
+                  className={`bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 ${
                     errors.facebookLink && touched.facebookLink
                       ? "is-invalid"
                       : ""
@@ -167,7 +167,7 @@ export function Personal() {
                   name="twitterLink"
                   type="text"
                   placeholder="twitterLink"
-                  className={`dark:bg-slate-600 focus:outline-none border-b p-2 ${
+                  className={`bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 ${
                     errors.twitterLink && touched.twitterLink
                       ? "is-invalid"
                       : ""
@@ -184,7 +184,7 @@ export function Personal() {
                   name="githubLink"
                   type="text"
                   placeholder="githubLink"
-                  className={`dark:bg-slate-600 focus:outline-none border-b p-2 ${
+                  className={`bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 ${
                     errors.githubLink && touched.githubLink ? "is-invalid" : ""
                   }`}
                 />
