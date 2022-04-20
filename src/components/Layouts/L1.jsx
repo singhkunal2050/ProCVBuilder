@@ -13,7 +13,7 @@ export default function L1({ data }) {
     linkedinLink,
     githubLink,
   } = data.personal;
-  const { skills, languages, accentColor } = data;
+  const { skills, languages, accentColor, certifications } = data;
 
   return (
     <section
@@ -40,14 +40,18 @@ export default function L1({ data }) {
         <div className="bg-blue-900 text-blue-900 border-blue-900"></div>
       </div>
       <section className="top-section flex">
-        <div className={`flex flex-col border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`} >
+        <div
+          className={`flex flex-col border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
+        >
           <h2 className={`text-4xl font-bold text-${accentColor}-600`}>
             {firstname} {lastname}
           </h2>
           <p>Software Engineer</p>
           <p>Pune</p>
         </div>
-        <div className={`flex-1 border-2 border-${accentColor}-100 dark:border-${accentColor}-900 flex flex-col items-end p-2`}>
+        <div
+          className={`flex-1 border-2 border-${accentColor}-100 dark:border-${accentColor}-900 flex flex-col items-end p-2`}
+        >
           {email && <a href={`mailto:${email}`}>{email}</a>}
           {phone && <a href={`tel:${phone}`}> {phone}</a>}
           <div className="flex flex-col">
@@ -81,17 +85,25 @@ export default function L1({ data }) {
           </div>
         </div>
       </section>
-      <section className={`middle-section border-2 border-${accentColor}-100 dark:border-${accentColor}-900 grid grid-cols-60/40`}>
+      <section
+        className={`middle-section border-2 border-${accentColor}-100 dark:border-${accentColor}-900 grid grid-cols-60/40`}
+      >
         <div className="left">
           <div className="experiences">
-            <h2 className={`text-2xl font-bold capitalize mb-1 p-2 text-${accentColor}-600`}>
+            <h2
+              className={`text-2xl font-bold capitalize mb-1 p-2 text-${accentColor}-600`}
+            >
               Experiences
             </h2>
-            <article className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}>
+            <article
+              className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
+            >
               <h3 className="text-lg font-bold">Inmax Infotech</h3>
               <p>Software Engineer</p>
               <p>Jan-20 - Dec-22</p>
-              <ul className={`points list-disc ml-6 text-sm marker:text-${accentColor}-700`}>
+              <ul
+                className={`points list-disc ml-6 text-sm marker:text-${accentColor}-700`}
+              >
                 <li>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Necessitatibus, omnis?
@@ -104,10 +116,14 @@ export default function L1({ data }) {
             </article>
           </div>
           <div className="education">
-            <h2 className={`text-2xl font-bold capitalize mb-1 p-2 text-${accentColor}-600`}>
+            <h2
+              className={`text-2xl font-bold capitalize mb-1 p-2 text-${accentColor}-600`}
+            >
               Education
             </h2>
-            <article className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}>
+            <article
+              className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
+            >
               <h3 className="text-lg font-bold">BTech</h3>
               <p>Pune University</p>
               <p>2018 -2022</p>
@@ -116,10 +132,14 @@ export default function L1({ data }) {
         </div>
         <div className="right ">
           <div className="skills">
-            <h2 className={`text-2xl font-bold capitalize mb-1 p-2 text-${accentColor}-600`}>
+            <h2
+              className={`text-2xl font-bold capitalize mb-1 p-2 text-${accentColor}-600`}
+            >
               Skills
             </h2>
-            <article className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 flex gap-2 flex-wrap p-2`}>
+            <article
+              className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 flex gap-2 flex-wrap p-2`}
+            >
               {skills.map((skill, index) => (
                 <span
                   key={index}
@@ -131,40 +151,47 @@ export default function L1({ data }) {
             </article>
           </div>
           <div className="certifications">
-          <h2 className={`text-2xl font-bold capitalize mb-1 p-2 text-${accentColor}-600`}>
+            <h2
+              className={`text-2xl font-bold capitalize mb-1 p-2 text-${accentColor}-600`}
+            >
               Certifications
             </h2>
-            <article className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}>
-              <h3 className="text-lg font-bold">Python Bootcamp</h3>
-              <p>freecodecamp</p>
-              <div className={`stars text-${accentColor}-700 flex gap-1 text-xs`}>
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-              </div>
-            </article>
-            <article className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}>
-              <h3 className="text-lg font-bold">Python Bootcamp</h3>
-              <p>freecodecamp</p>
-              <div className={`stars text-${accentColor}-700 flex gap-1 text-xs`}>
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-              </div>
-            </article>
+
+            {certifications.map((cert, index) => {
+              return (
+                <article key={index}
+                  className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
+                >
+                  <h3 className="text-lg font-bold">{cert.name}</h3>
+                  <p>{cert.institute}</p>
+                  <p>{cert.year}</p>
+                  <div
+                    className={`stars text-${accentColor}-700 flex gap-1 text-xs`}
+                  >
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                  </div>
+                </article>
+              );
+            })}
           </div>
           <div className="Projects">
-          <h2 className={`text-2xl font-bold capitalize mb-1 p-2 text-${accentColor}-600`}>
+            <h2
+              className={`text-2xl font-bold capitalize mb-1 p-2 text-${accentColor}-600`}
+            >
               Projects
             </h2>
-            <article className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}>
+            <article
+              className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
+            >
               <h3 className="text-lg font-bold">Password Generator</h3>
               <p>Nodejs | Mongodb</p>
-              <ul className={`points list-disc ml-6 text-sm marker:text-${accentColor}-700`}>
+              <ul
+                className={`points list-disc ml-6 text-sm marker:text-${accentColor}-700`}
+              >
                 <li>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Necessitatibus, omnis?
@@ -175,18 +202,21 @@ export default function L1({ data }) {
                 </li>
               </ul>
             </article>
-
           </div>
           <div className="skills">
-          <h2 className={`text-2xl font-bold capitalize mb-1 p-2 text-${accentColor}-600`}>
+            <h2
+              className={`text-2xl font-bold capitalize mb-1 p-2 text-${accentColor}-600`}
+            >
               Languages
             </h2>
-            <article className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 flex gap-2 flex-wrap p-2`}>
+            <article
+              className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 flex gap-2 flex-wrap p-2`}
+            >
               {languages.map((language, index) => (
                 <span
                   key={index}
                   className={`py-[2px] px-1 dark:text-slate-800 text-sm rounded-lg bg-${accentColor}-100 dark:bg-${accentColor}-700 dark:text-white`}
-                  >
+                >
                   {language}
                 </span>
               ))}

@@ -11,7 +11,6 @@ const CertificationSchema = Yup.object().shape({
   year: Yup.number().required().positive().integer().min(2000).max(2022),
 });
 const ArrayOfCertificationsSchema = Yup.array().of(CertificationSchema);
-console.log(ArrayOfCertificationsSchema);
 
 function Certifications() {
   const [show, setshow] = useState(true);
@@ -19,7 +18,10 @@ function Certifications() {
 
   const handleSubmit = (values, actions) => {
     actions.setSubmitting(true);
-    console.log(values.certifications);
+    setEditor({
+      ...editor,
+      certifications : values.certifications, 
+    })
     actions.setSubmitting(false);
   };
 
