@@ -106,7 +106,7 @@ export default function L2({ data }) {
 
 
               <span className="py-[2px] px-1 text-sm rounded-lg bg-indigo-100 dark:bg-indigo-700 dark:text-white">
-                PHP
+                PHP 
               </span>
               <span className="py-[2px] px-1 text-sm rounded-lg bg-indigo-100 dark:bg-indigo-700 dark:text-white">
                 CSS

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Personal, Experience, Education, Skills , Languages } from './EditorModules'
+import ColorScheme from './EditorModules/ColorScheme'
 
 export function Editor() {
     const [open, setOpen] = useState(true)
@@ -11,6 +12,7 @@ export function Editor() {
                 </svg>
             </button>
             <div className='p-4 max-h-screen  overflow-y-auto'>
+                <ColorScheme/>
                 <Personal />
                 <Skills />
                 <Languages />
