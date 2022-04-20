@@ -10,6 +10,7 @@ export function EditorProvider(props) {
   const [layout, setLayout] = useState("L1");
 
   const [editor, setEditor] = useState({
+    accentColor : "blue",
     personal: {
       firstname: "Mike",
       lastname: "Alpha",
