@@ -51,7 +51,7 @@ export default function L1({ data }) {
           {email && <a href={`mailto:${email}`}>{email}</a>}
           {phone && <a href={`tel:${phone}`}> {phone}</a>}
           <div className="flex flex-col">
-            <div className="flex gap-1 justify-end">
+            <div className={`flex gap-1 justify-end text-${accentColor}-800`}>
               {facebookLink && (
                 <a target="_blank" rel="noreferrer" href={"//" + facebookLink}>
                   <FaFacebook />
