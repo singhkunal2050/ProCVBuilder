@@ -39,8 +39,6 @@ export default function L1({ data }) {
         <div className="bg-blue-800 text-blue-800 border-blue-800"></div>
         <div className="bg-blue-900 text-blue-900 border-blue-900"></div>
       </div>
-      {accentColor}
-
       <section className="top-section flex">
         <div className={`flex flex-col border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`} >
           <h2 className={`text-4xl font-bold text-${accentColor}-600`}>
@@ -125,7 +123,7 @@ export default function L1({ data }) {
               {skills.map((skill, index) => (
                 <span
                   key={index}
-                  className={`py-[2px] px-1 text-sm rounded-lg bg-${accentColor}-100 dark:bg-${accentColor}-700 dark:text-white`}
+                  className={`py-[2px] px-1 dark:text-slate-800 text-sm rounded-lg bg-${accentColor}-100 dark:bg-${accentColor}-700 dark:text-white`}
                 >
                   {skill}
                 </span>
@@ -136,7 +134,7 @@ export default function L1({ data }) {
           <h2 className={`text-2xl font-bold capitalize mb-1 p-2 text-${accentColor}-600`}>
               Certifications
             </h2>
-            <article className=" border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2">
+            <article className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}>
               <h3 className="text-lg font-bold">Python Bootcamp</h3>
               <p>freecodecamp</p>
               <div className={`stars text-${accentColor}-700 flex gap-1 text-xs`}>
@@ -147,7 +145,7 @@ export default function L1({ data }) {
                 <FaStar />
               </div>
             </article>
-            <article className=" border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2">
+            <article className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}>
               <h3 className="text-lg font-bold">Python Bootcamp</h3>
               <p>freecodecamp</p>
               <div className={`stars text-${accentColor}-700 flex gap-1 text-xs`}>
@@ -183,11 +181,11 @@ export default function L1({ data }) {
           <h2 className={`text-2xl font-bold capitalize mb-1 p-2 text-${accentColor}-600`}>
               Languages
             </h2>
-            <article className="border-2 border-${accentColor}-100 dark:border-${accentColor}-900 flex gap-2 flex-wrap p-2">
+            <article className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 flex gap-2 flex-wrap p-2`}>
               {languages.map((language, index) => (
                 <span
                   key={index}
-                  className={`py-[2px] px-1 text-sm rounded-lg bg-${accentColor}-100 dark:bg-${accentColor}-700 dark:text-white`}
+                  className={`py-[2px] px-1 dark:text-slate-800 text-sm rounded-lg bg-${accentColor}-100 dark:bg-${accentColor}-700 dark:text-white`}
                   >
                   {language}
                 </span>
