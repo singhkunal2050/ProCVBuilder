@@ -78,6 +78,19 @@ export function EditorProvider(props) {
         year_to : 2024
       }
     ],
+    projects:[
+      {
+        name: "Password Generator",
+        stack: "React | Node | Express | MongoDB",
+        from: "2018-Jan",
+        to: "2020-Jan",
+        highlights: [
+          "Developed a web application for managing the inventory of a company",
+          "Developed a web application for managing the inventory of a company",
+          "Developed a web application for managing the inventory of a company",
+        ],
+      },
+    ],
     languages : ["English", "Hindi", "Marathi"],
   });
 

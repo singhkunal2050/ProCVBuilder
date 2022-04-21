@@ -6,16 +6,16 @@ import { CgWorkAlt } from "react-icons/cg";
 import { useEditor } from "../../../context/EditorContext";
 import * as Yup from "yup";
 
-const ExperienceSchema = Yup.object().shape({
-  companyName: Yup.string().required(),
-  role: Yup.string().required(),
+const ProjectSchema = Yup.object().shape({
+  name: Yup.string().required(),
+  stack: Yup.string().required(),
   from: Yup.string().required(),
   to: Yup.string().required(),
   highlights : Yup.string().required(),
 });
-const ArrayOfExperiencesSchema = Yup.array().of(ExperienceSchema);
+const ArrayOfProjectsSchema = Yup.array().of(ProjectSchema);
 
-export function Experiences() {
+export function Projects() {
   const [show, setshow] = useState(false);
   const { editor, setEditor } = useEditor();
 
@@ -23,7 +23,7 @@ export function Experiences() {
     actions.setSubmitting(true);
     setEditor({
       ...editor,
-      experiences: values.experiences,
+      projects: values.projects,
     });
     actions.setSubmitting(false);
   };
@@ -34,25 +34,25 @@ export function Experiences() {
         className="font-bold text-xl cursor-pointer p-2 flex gap-2 items-center"
         onClick={() => setshow(!show)}
       >
-        Experiences <CgWorkAlt />{" "}
+        Projects <CgWorkAlt />{" "}
       </h3>
       <div className={`option ${!show && "hidden"}`}>
         <Formik
-          initialValues={{ experiences: editor.experiences }}
-          validationSchema={ArrayOfExperiencesSchema}
+          initialValues={{ projects: editor.projects }}
+          validationSchema={ArrayOfProjectsSchema}
           onSubmit={handleSubmit}
         >
           {({ values, errors, touched }) => (
             <Form>
-              <FieldArray name="experiences">
+              <FieldArray name="projects">
                 {(arrayHelpers) => (
                   <div>
-                    {values.experiences &&
-                    values.experiences.length > 0 ? (
-                      values.experiences.map((cert, index) => (
+                    {values.projects &&
+                    values.projects.length > 0 ? (
+                      values.projects.map((cert, index) => (
                         <div className="py-2" key={index}>
                           {index === 0 && (
-                            <AddExperiencesButton push={arrayHelpers.push} />
+                            <AddProjectsButton push={arrayHelpers.push} />
                           )}
                           <GroupedInput
                             remove={arrayHelpers.remove}
@@ -62,7 +62,7 @@ export function Experiences() {
                       ))
                     ) : (
                       <div>
-                        <AddExperiencesButton push={arrayHelpers.push} />
+                        <AddProjectsButton push={arrayHelpers.push} />
                       </div>
                     )}
                   </div>
@@ -82,7 +82,7 @@ export function Experiences() {
   );
 }
 
-function AddExperiencesButton({ push }) {
+function AddProjectsButton({ push }) {
   return (
     <button
       onClick={() =>
@@ -95,7 +95,7 @@ function AddExperiencesButton({ push }) {
       type="button"
       className="flex gap-2 items-center"
     >
-      Add Experiences <AiOutlinePlus />
+      Add Projects <AiOutlinePlus />
     </button>
   );
 }
@@ -109,27 +109,27 @@ function GroupedInput({ remove, index }) {
       <Field
         className=" bg-slate-100 border-b-slate-500 mt-2  dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="Course Name"
-        name={`experiences.${index}.companyName`}
+        name={`projects.${index}.name`}
       />
       <Field
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="College/University Name"
-        name={`experiences.${index}.role`}
+        name={`projects.${index}.stack`}
       />
       <Field
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="Year From"
-        name={`experiences.${index}.from`}
+        name={`projects.${index}.from`}
       />
       <Field
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="Year To"
-        name={`experiences.${index}.to`}
+        name={`projects.${index}.to`}
       />
       {/* <Field
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="Highlights"
-        name={`experiences.${index}.hightlights`}
+        name={`projects.${index}.hightlights`}
       /> */}
     </div>
   );

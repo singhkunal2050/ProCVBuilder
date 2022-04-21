@@ -20,6 +20,7 @@ export default function L1({ data }) {
     certifications,
     educations,
     experiences,
+    projects,
   } = data;
 
   return (
@@ -107,6 +108,7 @@ export default function L1({ data }) {
               experiences.length > 0 &&
               experiences.map((experience, index) => (
                 <article
+                  key={index}
                   className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
                 >
                   <h3 className="text-lg font-bold">
@@ -127,7 +129,9 @@ export default function L1({ data }) {
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Necessitatibus, omnis?
                     </li>
-                    <li>{experience.hightlights}</li>
+                    {/* {experience.hightlights && (
+                      <li>{experience.hightlights}</li>
+                    )} */}
                   </ul>
                 </article>
               ))}
@@ -210,24 +214,32 @@ export default function L1({ data }) {
             >
               Projects
             </h2>
-            <article
-              className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
-            >
-              <h3 className="text-lg font-bold">Password Generator</h3>
-              <p>Nodejs | Mongodb</p>
-              <ul
-                className={`points list-disc ml-6 text-sm marker:text-${accentColor}-700`}
-              >
-                <li>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Necessitatibus, omnis?
-                </li>
-                <li>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Necessitatibus, omnis?
-                </li>
-              </ul>
-            </article>
+
+            {projects &&
+              projects.length > 0 &&
+              projects.map((project, index) => (
+                <article key={index}
+                  className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
+                >
+                  <h3 className="text-lg font-bold">{project.name}</h3>
+                  <p>{project.stack}</p>
+                  <p>
+                    {project.from} - {project.to}
+                  </p>
+                  <ul
+                    className={`points list-disc ml-6 text-sm marker:text-${accentColor}-700`}
+                  >
+                    <li>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Necessitatibus, omnis?
+                    </li>
+                    <li>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Necessitatibus, omnis?
+                    </li>
+                  </ul>
+                </article>
+              ))}
           </div>
           <div className="skills">
             <h2
