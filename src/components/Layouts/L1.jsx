@@ -143,7 +143,7 @@ export default function L1({ data }) {
               {skills.map((skill, index) => (
                 <span
                   key={index}
-                  className={`py-[2px] px-1 dark:text-slate-800 text-sm rounded-lg bg-${accentColor}-100 dark:bg-${accentColor}-700 dark:text-white`}
+                  className={`py-[2px] px-1 text-sm rounded-lg bg-${accentColor}-100 dark:bg-${accentColor}-800 dark:text-white`}
                 >
                   {skill}
                 </span>

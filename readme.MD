@@ -2,6 +2,9 @@
 
 # ProCVBuilder to get you into the best companies
 
-- MUI 
+- TailwindCSS
 - Redux 
 - Firebase Auth
+- Color Scheme using Input type color => style component to style editor => hues using rgba()
+- Templates page to start with any template on click of image of that template  
+- Quil JS 

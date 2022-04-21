@@ -1,7 +1,7 @@
 import { Field, FieldArray, Form, Formik, ErrorMessage } from "formik";
 import React from "react";
 import { useState } from "react";
-import { AiOutlineTrophy } from "react-icons/ai";
+import { AiOutlineTrophy, AiOutlinePlus } from "react-icons/ai";
 import { useEditor } from "../../../context/EditorContext";
 import * as Yup from "yup";
 
@@ -20,8 +20,8 @@ function Certifications() {
     actions.setSubmitting(true);
     setEditor({
       ...editor,
-      certifications : values.certifications, 
-    })
+      certifications: values.certifications,
+    });
     actions.setSubmitting(false);
   };
 
@@ -46,72 +46,20 @@ function Certifications() {
                   <div>
                     {values.certifications &&
                     values.certifications.length > 0 ? (
-                      values.certifications.map((cert, index) => {
-                        return (
-                          <div className="py-2" key={index}>
-                            {index === 0 && (
-                              <button
-                                onClick={() =>
-                                  arrayHelpers.push({
-                                    name: "",
-                                    institute: "",
-                                    year: "",
-                                  })
-                                }
-                                type="button"
-                                className="bg-green-500 p-1 font-semibold"
-                              >
-                                Add
-                              </button>
-                            )}
-
-                            <Field
-                              className=" bg-slate-100 border-b-slate-500 mt-2  dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
-                              placeholder="Certification Name"
-                              name={`certifications.${index}.name`}
-                            />
-                            <ErrorMessage
-                              name={`certifications.${index}.name`}
-                            />
-
-                            <Field
-                              className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
-                              placeholder="Institute"
-                              name={`certifications.${index}.institute`}
-                            />
-                            <Field
-                              className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
-                              placeholder="Year"
-                              name={`certifications.${index}.year`}
-                            />
-                            <ErrorMessage
-                              name={`certifications.${index}.year`}
-                            />
-                            <button
-                              type="button"
-                              className="bg-red-500 p-1 font-semibold"
-                              onClick={() => arrayHelpers.remove(index)}
-                            >
-                              Remove
-                            </button>
-                          </div>
-                        );
-                      })
+                      values.certifications.map((cert, index) => (
+                        <div className="py-2" key={index}>
+                          {index === 0 && (
+                            <AddCertificationsButton push={arrayHelpers.push} />
+                          )}
+                          <GroupedInput
+                            remove={arrayHelpers.remove}
+                            index={index}
+                          />
+                        </div>
+                      ))
                     ) : (
                       <div>
-                        <button
-                          type="button"
-                          onClick={() =>
-                            arrayHelpers.push({
-                              name: "",
-                              institute: "",
-                              year: "",
-                            })
-                          }
-                          className="bg-green-500 p-1 font-semibold"
-                        >
-                          Add
-                        </button>
+                        <AddCertificationsButton push={arrayHelpers.push} />
                       </div>
                     )}
                   </div>
@@ -132,3 +80,53 @@ function Certifications() {
 }
 
 export default Certifications;
+
+function AddCertificationsButton({ push }) {
+  return (
+    <button
+      onClick={() =>
+        push({
+          name: "",
+          institute: "",
+          year: "",
+        })
+      }
+      type="button"
+      className="flex gap-2 items-center"
+    >
+      Add Certifications <AiOutlinePlus />
+    </button>
+  );
+}
+
+function GroupedInput({ remove, index }) {
+  return (
+    <div>
+      <Field
+        className=" bg-slate-100 border-b-slate-500 mt-2  dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
+        placeholder="Certification Name"
+        name={`certifications.${index}.name`}
+      />
+      <ErrorMessage name={`certifications.${index}.name`} />
+
+      <Field
+        className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
+        placeholder="Institute"
+        name={`certifications.${index}.institute`}
+      />
+      <Field
+        className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
+        placeholder="Year"
+        name={`certifications.${index}.year`}
+      />
+      <ErrorMessage name={`certifications.${index}.year`} />
+      <button
+        type="button"
+        className="bg-red-500 p-1 font-semibold"
+        onClick={() => remove(index)}
+      >
+        Remove
+      </button>
+    </div>
+  );
+}
