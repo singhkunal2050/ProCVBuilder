@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import { AiOutlineBgColors } from "react-icons/ai";
 import { useEditor } from "../../../context/EditorContext";
