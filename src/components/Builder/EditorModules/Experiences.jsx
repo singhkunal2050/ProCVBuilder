@@ -104,7 +104,7 @@ function AddExperiencesButton({ push }) {
 function GroupedInput({ remove, index }) {
   return (
     <div className="p-2 mt-2 bg-slate-200 dark:bg-gray-800 flex flex-col">
-      <button type="button" className="bg-red-800 p-1 ml-auto" onClick={() => remove(index)}>
+      <button type="button" className=" p-1 ml-auto" onClick={() => remove(index)}>
         <AiOutlineClose />
       </button>
       <Field

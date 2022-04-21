@@ -25,8 +25,9 @@ export default function L1({ data }) {
 
   return (
     <section
-      className={`border-2 border-${accentColor}-300 dark:bg-slate-800 dark:text-gray-200 flex-1 p-2`}
+      className={`border-2 border-${accentColor}-300 dark:bg-slate-800 dark:text-gray-200 flex-1 p-2 shadow-xl mt-4`}
     >
+      {accentColor}
       <div className="bg-rose-600 text-rose-600 border-rose-600 marker:text-rose-700 hidden">
         <div className="bg-rose-500 text-rose-500 border-rose-500"></div>
         <div className="bg-rose-400 text-rose-400 border-rose-400"></div>
@@ -172,7 +173,7 @@ export default function L1({ data }) {
               {skills.map((skill, index) => (
                 <span
                   key={index}
-                  className={`py-[2px] px-1 text-sm rounded-lg bg-${accentColor}-100 dark:bg-${accentColor}-800 dark:text-white`}
+                  className={`py-[2px] px-1 text-sm rounded-lg bg-${accentColor}-100 dark:bg-transparent dark:border-2`}
                 >
                   {skill}
                 </span>
@@ -253,7 +254,7 @@ export default function L1({ data }) {
               {languages.map((language, index) => (
                 <span
                   key={index}
-                  className={`py-[2px] px-1 dark:text-slate-800 text-sm rounded-lg bg-${accentColor}-100 dark:bg-${accentColor}-700 dark:text-white`}
+                  className={`py-[2px] px-1 text-sm rounded-lg bg-${accentColor}-100 dark:bg-transparent dark:border-2 `}
                 >
                   {language}
                 </span>
