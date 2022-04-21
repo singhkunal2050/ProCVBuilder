@@ -1,19 +1,21 @@
 import { Field, FieldArray, Form, Formik, ErrorMessage } from "formik";
 import React from "react";
 import { useState } from "react";
-import { AiOutlineBook , AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
+import { CgWorkAlt } from "react-icons/cg";
 import { useEditor } from "../../../context/EditorContext";
 import * as Yup from "yup";
 
 const EducationSchema = Yup.object().shape({
-  name: Yup.string().required(),
-  institute: Yup.string().required(),
-  year_from: Yup.number().required().positive().integer().min(2000).max(2022),
-  year_to: Yup.number().required().positive().integer().min(2000).max(2022),
+  companyName: Yup.string().required(),
+  tole: Yup.string().required(),
+  from: Yup.string().required(),
+  to: Yup.string().required(),
+  highlights : Yup.string().required(),
 });
-const ArrayOfEducationsSchema = Yup.array().of(EducationSchema);
+const ArrayOfExperiencesSchema = Yup.array().of(EducationSchema);
 
-export function Educations() {
+export function Experiences() {
   const [show, setshow] = useState(false);
   const { editor, setEditor } = useEditor();
 
@@ -21,7 +23,7 @@ export function Educations() {
     actions.setSubmitting(true);
     setEditor({
       ...editor,
-      educations: values.educations,
+      experiences: values.experiences,
     });
     actions.setSubmitting(false);
   };
@@ -32,25 +34,25 @@ export function Educations() {
         className="font-bold text-xl cursor-pointer p-2 flex gap-2 items-center"
         onClick={() => setshow(!show)}
       >
-        Educations <AiOutlineBook />{" "}
+        Experiences <CgWorkAlt />{" "}
       </h3>
       <div className={`option ${!show && "hidden"}`}>
         <Formik
-          initialValues={{ educations: editor.educations }}
-          validationSchema={ArrayOfEducationsSchema}
+          initialValues={{ experiences: editor.experiences }}
+          validationSchema={ArrayOfExperiencesSchema}
           onSubmit={handleSubmit}
         >
           {({ values, errors, touched }) => (
             <Form>
-              <FieldArray name="educations">
+              <FieldArray name="experiences">
                 {(arrayHelpers) => (
                   <div>
-                    {values.educations &&
-                    values.educations.length > 0 ? (
-                      values.educations.map((cert, index) => (
+                    {values.experiences &&
+                    values.experiences.length > 0 ? (
+                      values.experiences.map((cert, index) => (
                         <div className="py-2" key={index}>
                           {index === 0 && (
-                            <AddEducationsButton push={arrayHelpers.push} />
+                            <AddExperiencesButton push={arrayHelpers.push} />
                           )}
                           <GroupedInput
                             remove={arrayHelpers.remove}
@@ -60,7 +62,7 @@ export function Educations() {
                       ))
                     ) : (
                       <div>
-                        <AddEducationsButton push={arrayHelpers.push} />
+                        <AddExperiencesButton push={arrayHelpers.push} />
                       </div>
                     )}
                   </div>
@@ -80,7 +82,7 @@ export function Educations() {
   );
 }
 
-function AddEducationsButton({ push }) {
+function AddExperiencesButton({ push }) {
   return (
     <button
       onClick={() =>
@@ -93,7 +95,7 @@ function AddEducationsButton({ push }) {
       type="button"
       className="flex gap-2 items-center"
     >
-      Add Educations <AiOutlinePlus />
+      Add Experiences <AiOutlinePlus />
     </button>
   );
 }
@@ -107,26 +109,28 @@ function GroupedInput({ remove, index }) {
       <Field
         className=" bg-slate-100 border-b-slate-500 mt-2  dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="Course Name"
-        name={`educations.${index}.name`}
+        name={`experiences.${index}.companyName`}
       />
-      <ErrorMessage name={`educations.${index}.name`} />
-
       <Field
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="College/University Name"
-        name={`educations.${index}.institute`}
+        name={`experiences.${index}.role`}
       />
       <Field
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="Year From"
-        name={`educations.${index}.year_from`}
+        name={`experiences.${index}.from`}
       />
       <Field
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="Year To"
-        name={`educations.${index}.year_to`}
+        name={`experiences.${index}.to`}
       />
-      <ErrorMessage name={`educations.${index}.year`} />
+      <Field
+        className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
+        placeholder="Highlights"
+        name={`experiences.${index}.hightlights`}
+      />
     </div>
   );
 }

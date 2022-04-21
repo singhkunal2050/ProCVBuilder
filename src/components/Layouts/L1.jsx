@@ -13,7 +13,14 @@ export default function L1({ data }) {
     linkedinLink,
     githubLink,
   } = data.personal;
-  const { skills, languages, accentColor, certifications, educations } = data;
+  const {
+    skills,
+    languages,
+    accentColor,
+    certifications,
+    educations,
+    experiences,
+  } = data;
 
   return (
     <section
@@ -95,25 +102,35 @@ export default function L1({ data }) {
             >
               Experiences
             </h2>
-            <article
-              className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
-            >
-              <h3 className="text-lg font-bold">Inmax Infotech</h3>
-              <p>Software Engineer</p>
-              <p>Jan-20 - Dec-22</p>
-              <ul
-                className={`points list-disc ml-6 text-sm marker:text-${accentColor}-700`}
-              >
-                <li>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Necessitatibus, omnis?
-                </li>
-                <li>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Necessitatibus, omnis?
-                </li>
-              </ul>
-            </article>
+
+            {experiences &&
+              experiences.length > 0 &&
+              experiences.map((experience, index) => (
+                <article
+                  className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
+                >
+                  <h3 className="text-lg font-bold">
+                    {experience.companyName}
+                  </h3>
+                  <p>{experience.role}</p>
+                  <p>
+                    {experience.from} - {experience.to}
+                  </p>
+                  <ul
+                    className={`points list-disc ml-6 text-sm marker:text-${accentColor}-700`}
+                  >
+                    <li>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Necessitatibus, omnis?
+                    </li>
+                    <li>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Necessitatibus, omnis?
+                    </li>
+                    <li>{experience.hightlights}</li>
+                  </ul>
+                </article>
+              ))}
           </div>
           <div className="education">
             <h2

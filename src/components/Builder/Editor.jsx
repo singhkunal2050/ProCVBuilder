@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Personal, Experience, Educations , Skills , Languages } from './EditorModules'
+import { Personal, Experiences, Educations , Skills , Languages } from './EditorModules'
 import Certifications from './EditorModules/Certifications'
 import ColorScheme from './EditorModules/ColorScheme'
 
@@ -19,7 +19,7 @@ export function Editor() {
                 <Languages />
                 <Certifications />
                 <Educations />
-                <Experience />
+                <Experiences />
             </div>
         </section>
     )
