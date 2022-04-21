@@ -1,7 +1,7 @@
 import { Field, FieldArray, Form, Formik, ErrorMessage } from "formik";
 import React from "react";
 import { useState } from "react";
-import { AiOutlineTrophy, AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineTrophy, AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import { useEditor } from "../../../context/EditorContext";
 import * as Yup from "yup";
 
@@ -101,7 +101,10 @@ function AddCertificationsButton({ push }) {
 
 function GroupedInput({ remove, index }) {
   return (
-    <div>
+    <div className="p-2 mt-2 bg-slate-200 dark:bg-gray-800 flex flex-col">
+      <button type="button" className="bg-red-800 p-1 ml-auto" onClick={() => remove(index)}>
+        <AiOutlineClose />
+      </button>
       <Field
         className=" bg-slate-100 border-b-slate-500 mt-2  dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="Certification Name"
@@ -120,13 +123,6 @@ function GroupedInput({ remove, index }) {
         name={`certifications.${index}.year`}
       />
       <ErrorMessage name={`certifications.${index}.year`} />
-      <button
-        type="button"
-        className="bg-red-500 p-1 font-semibold"
-        onClick={() => remove(index)}
-      >
-        Remove
-      </button>
     </div>
   );
 }
