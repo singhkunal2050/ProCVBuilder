@@ -13,7 +13,7 @@ export default function L1({ data }) {
     linkedinLink,
     githubLink,
   } = data.personal;
-  const { skills, languages, accentColor, certifications } = data;
+  const { skills, languages, accentColor, certifications, educations } = data;
 
   return (
     <section
@@ -121,13 +121,21 @@ export default function L1({ data }) {
             >
               Education
             </h2>
-            <article
-              className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
-            >
-              <h3 className="text-lg font-bold">BTech</h3>
-              <p>Pune University</p>
-              <p>2018 -2022</p>
-            </article>
+
+            {educations &&
+              educations.length > 0 &&
+              educations.map((education, index) => (
+                <article
+                  key={index}
+                  className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
+                >
+                  <h3 className="text-lg font-bold">{education.name}</h3>
+                  <p>{education.institute}</p>
+                  <p>
+                    {education.year_from} - {education.year_to}
+                  </p>
+                </article>
+              ))}
           </div>
         </div>
         <div className="right ">
@@ -159,7 +167,8 @@ export default function L1({ data }) {
 
             {certifications.map((cert, index) => {
               return (
-                <article key={index}
+                <article
+                  key={index}
                   className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
                 >
                   <h3 className="text-lg font-bold">{cert.name}</h3>

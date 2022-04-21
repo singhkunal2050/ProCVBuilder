@@ -1,6 +1,6 @@
 export * from './Personal'
 export * from './Experience'
-export * from './Education'
+export * from './Educations'
 export * from './Skills'
 export * from './Languages'
 export * from './Certifications'

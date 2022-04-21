@@ -64,6 +64,20 @@ export function EditorProvider(props) {
         year : 2021
       }
     ],
+    educations: [
+      {
+        name: "BCS",
+        institute : "Pune University",
+        year_from : 2020,
+        year_to : 2022
+      },
+      {
+        name: "MCA",
+        institute : "Pune University",
+        year_from : 2022,
+        year_to : 2024
+      }
+    ],
     languages : ["English", "Hindi", "Marathi"],
   });
 

@@ -1,26 +1,27 @@
 import { Field, FieldArray, Form, Formik, ErrorMessage } from "formik";
 import React from "react";
 import { useState } from "react";
-import { AiOutlineTrophy, AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
+import { AiOutlineBook , AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import { useEditor } from "../../../context/EditorContext";
 import * as Yup from "yup";
 
-const CertificationSchema = Yup.object().shape({
+const EducationSchema = Yup.object().shape({
   name: Yup.string().required(),
   institute: Yup.string().required(),
-  year: Yup.number().required().positive().integer().min(2000).max(2022),
+  year_from: Yup.number().required().positive().integer().min(2000).max(2022),
+  year_to: Yup.number().required().positive().integer().min(2000).max(2022),
 });
-const ArrayOfCertificationsSchema = Yup.array().of(CertificationSchema);
+const ArrayOfEducationsSchema = Yup.array().of(EducationSchema);
 
-function Certifications() {
-  const [show, setshow] = useState(false);
+export function Educations() {
+  const [show, setshow] = useState(true);
   const { editor, setEditor } = useEditor();
 
   const handleSubmit = (values, actions) => {
     actions.setSubmitting(true);
     setEditor({
       ...editor,
-      certifications: values.certifications,
+      educations: values.educations,
     });
     actions.setSubmitting(false);
   };
@@ -31,25 +32,25 @@ function Certifications() {
         className="font-bold text-xl cursor-pointer p-2 flex gap-2 items-center"
         onClick={() => setshow(!show)}
       >
-        Certifications <AiOutlineTrophy />{" "}
+        Educations <AiOutlineBook />{" "}
       </h3>
       <div className={`option ${!show && "hidden"}`}>
         <Formik
-          initialValues={{ certifications: editor.certifications }}
-          validationSchema={ArrayOfCertificationsSchema}
+          initialValues={{ educations: editor.educations }}
+          validationSchema={ArrayOfEducationsSchema}
           onSubmit={handleSubmit}
         >
           {({ values, errors, touched }) => (
             <Form>
-              <FieldArray name="certifications">
+              <FieldArray name="educations">
                 {(arrayHelpers) => (
                   <div>
-                    {values.certifications &&
-                    values.certifications.length > 0 ? (
-                      values.certifications.map((cert, index) => (
+                    {values.educations &&
+                    values.educations.length > 0 ? (
+                      values.educations.map((cert, index) => (
                         <div className="py-2" key={index}>
                           {index === 0 && (
-                            <AddCertificationsButton push={arrayHelpers.push} />
+                            <AddEducationsButton push={arrayHelpers.push} />
                           )}
                           <GroupedInput
                             remove={arrayHelpers.remove}
@@ -59,7 +60,7 @@ function Certifications() {
                       ))
                     ) : (
                       <div>
-                        <AddCertificationsButton push={arrayHelpers.push} />
+                        <AddEducationsButton push={arrayHelpers.push} />
                       </div>
                     )}
                   </div>
@@ -79,9 +80,7 @@ function Certifications() {
   );
 }
 
-export default Certifications;
-
-function AddCertificationsButton({ push }) {
+function AddEducationsButton({ push }) {
   return (
     <button
       onClick={() =>
@@ -94,7 +93,7 @@ function AddCertificationsButton({ push }) {
       type="button"
       className="flex gap-2 items-center"
     >
-      Add Certifications <AiOutlinePlus />
+      Add Educations <AiOutlinePlus />
     </button>
   );
 }
@@ -107,22 +106,27 @@ function GroupedInput({ remove, index }) {
       </button>
       <Field
         className=" bg-slate-100 border-b-slate-500 mt-2  dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
-        placeholder="Certification Name"
-        name={`certifications.${index}.name`}
+        placeholder="Course Name"
+        name={`educations.${index}.name`}
       />
-      <ErrorMessage name={`certifications.${index}.name`} />
+      <ErrorMessage name={`educations.${index}.name`} />
 
       <Field
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
-        placeholder="Institute"
-        name={`certifications.${index}.institute`}
+        placeholder="College/University Name"
+        name={`educations.${index}.institute`}
       />
       <Field
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
-        placeholder="Year"
-        name={`certifications.${index}.year`}
+        placeholder="Year From"
+        name={`educations.${index}.year_from`}
       />
-      <ErrorMessage name={`certifications.${index}.year`} />
+      <Field
+        className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
+        placeholder="Year To"
+        name={`educations.${index}.year_to`}
+      />
+      <ErrorMessage name={`educations.${index}.year`} />
     </div>
   );
 }
