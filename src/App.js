@@ -5,6 +5,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Builder from "./pages/Builder";
 import {Helmet} from "react-helmet";
+import Templates from "./pages/Templates";
 
 function App() {
 
@@ -21,10 +22,11 @@ function App() {
      
       </Helmet>
         <Navbar />
-        <main className={`min-h-[70vh] font-sora  dark:bg-slate-800 dark:text-gray-200`}>
+        <main className={`min-h-[100vh] font-sora  dark:bg-slate-800 dark:text-gray-200`}>
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/templates" element={<Templates />} />
             <Route path="/builder" element={<Builder />} />
           </Routes>
         </main>

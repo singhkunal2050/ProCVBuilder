@@ -7,6 +7,8 @@ export default function L1({ data }) {
     lastname,
     email,
     phone,
+    designation,
+    city,
     website,
     facebookLink,
     twitterLink,
@@ -27,7 +29,6 @@ export default function L1({ data }) {
     <section
       className={`border-2 border-${accentColor}-300 dark:bg-slate-800 dark:text-gray-200 flex-1 p-2 shadow-xl mt-4`}
     >
-      {accentColor}
       <div className="bg-rose-600 text-rose-600 border-rose-600 marker:text-rose-700 hidden">
         <div className="bg-rose-500 text-rose-500 border-rose-500"></div>
         <div className="bg-rose-400 text-rose-400 border-rose-400"></div>
@@ -55,8 +56,8 @@ export default function L1({ data }) {
           <h2 className={`text-4xl font-bold text-${accentColor}-600`}>
             {firstname} {lastname}
           </h2>
-          <p>Software Engineer</p>
-          <p>Pune</p>
+          <p>{designation}</p>
+          <p>{city}</p>
         </div>
         <div
           className={`flex-1 border-2 border-${accentColor}-100 dark:border-${accentColor}-900 flex flex-col items-end p-2`}

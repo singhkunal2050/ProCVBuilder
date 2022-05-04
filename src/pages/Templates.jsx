@@ -1,12 +1,12 @@
 import React from 'react'
 import Container from "../components/Container"
 
-function About() {
+function Templates() {
   return (
     <div>
       <Container>
         <h1 className="text-3xl font-bold py-4 text-center">
-          About
+          Templates
         </h1>
 
 
@@ -15,4 +15,4 @@ function About() {
   )
 }
 
-export default About
+export default Templates

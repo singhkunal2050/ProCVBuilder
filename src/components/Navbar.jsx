@@ -14,7 +14,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="text-fuchsia-700 md:text-slate-100 py-4 px-4 border-b-2 bg-gradient-to-r from-emerald-500 to-fuchsia-600 dark:from-emerald-800 dark:to-fuchsia-900 top-0 z-10 sticky">
+    <nav className="text-fuchsia-700 md:text-slate-100 py-4 px-4 border-b-2 bg-gradient-to-r from-gray-900 to-black top-0 z-10 sticky">
       <Container>
         <section className="flex justify-between items-center">
           <div className="text-2xl font-extrabold z-20">
@@ -33,6 +33,9 @@ function Navbar() {
             </Link>
             <Link className="py-2 px-4" to="/about">
               About
+            </Link>
+            <Link className="py-2 px-4" to="/templates">
+              Templates
             </Link>
             <Link className="py-2 px-4" to="/builder">
               Builder
@@ -70,6 +73,13 @@ function Navbar() {
               onClick={toogleSidebar}
             >
               About
+            </Link>
+            <Link
+              className="py-2 px-4   hover:bg-gray-100"
+              to="/templates"
+              onClick={toogleSidebar}
+            >
+              Templates
             </Link>
             <Link
               className="py-2 px-4   hover:bg-gray-100"

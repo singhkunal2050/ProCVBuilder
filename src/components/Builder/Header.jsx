@@ -11,13 +11,13 @@ export function Header({ state }) {
 
     return (
         <>
-            <h4 className="text-base md:text-2xl font-bold py-4 text-center bg-gradient-to-r from-emerald-500 to-fuchsia-500 text-white">
+            <h4 className="text-base md:text-2xl font-bold py-4 text-center bg-gray-900 text-white">
                 Resume Builder
             </h4>
 
             <ReactToPrint
                 trigger={() => (
-                    <button className="bg-fuchsia-300 text-black font-bold p-2 mx-auto">
+                    <button className="bg-gray-900 text-white px-5 font-bold p-2 mx-auto fixed bottom-10 left-20">
                         Print
                     </button>
                 )}

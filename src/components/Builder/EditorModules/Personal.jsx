@@ -114,6 +114,38 @@ export function Personal() {
 
               <div className="flex flex-col mb-2">
                 <Field
+                  name="designation"
+                  type="text"
+                  placeholder="Designation"
+                  className={`bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 ${
+                    errors.designation && touched.designation ? "is-invalid" : ""
+                  }`}
+                />
+                {errors.designation && touched.designation && (
+                  <div className="invalid-feedback text-xs text-red-700 font-semibold my-1">
+                    {errors.designation}
+                  </div>
+                )}
+              </div>
+
+              <div className="flex flex-col mb-2">
+                <Field
+                  name="city"
+                  type="text"
+                  placeholder="City"
+                  className={`bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 ${
+                    errors.city && touched.city ? "is-invalid" : ""
+                  }`}
+                />
+                {errors.city && touched.city && (
+                  <div className="invalid-feedback text-xs text-red-700 font-semibold my-1">
+                    {errors.city}
+                  </div>
+                )}
+              </div>
+
+              <div className="flex flex-col mb-2">
+                <Field
                   name="website"
                   type="text"
                   placeholder="website"

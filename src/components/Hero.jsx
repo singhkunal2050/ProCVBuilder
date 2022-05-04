@@ -17,7 +17,7 @@ function Hero() {
                 Temporibus tempore magnam porro provident! Omnis molestiae animi
                 voluptates, magnam nisi quod!
               </p>
-              <Link to="/builder">
+              <Link to="/builder">  
                 <button
                   type="button"
                   className="inline-flex px-6 mt-5 py-2.5 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"

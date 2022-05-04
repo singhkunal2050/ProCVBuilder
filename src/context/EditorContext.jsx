@@ -16,6 +16,8 @@ export function EditorProvider(props) {
       lastname: "Alpha",
       email: "mikealpha@gmail.com",
       phone: "9999999999",
+      designation:"Developer",
+      city:"Madrid",
       website: "demo.com",
       facebookLink: "facebook.com",
       twitterLink: "twitter.com",
