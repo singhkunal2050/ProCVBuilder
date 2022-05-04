@@ -51,7 +51,7 @@ export default function L1({ data }) {
       </div>
       <section className="top-section flex">
         <div
-          className={`flex flex-col border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
+          className={`flex flex-col p-2`}
         >
           <h2 className={`text-4xl font-bold text-${accentColor}-600`}>
             {firstname} {lastname}
@@ -60,7 +60,7 @@ export default function L1({ data }) {
           <p>{city}</p>
         </div>
         <div
-          className={`flex-1 border-2 border-${accentColor}-100 dark:border-${accentColor}-900 flex flex-col items-end p-2`}
+          className={`flex-1  flex flex-col items-end p-2`}
         >
           {email && <a href={`mailto:${email}`}>{email}</a>}
           {phone && <a href={`tel:${phone}`}> {phone}</a>}
@@ -96,7 +96,7 @@ export default function L1({ data }) {
         </div>
       </section>
       <section
-        className={`middle-section border-2 border-${accentColor}-100 dark:border-${accentColor}-900 grid grid-cols-60/40`}
+        className={`middle-section grid grid-cols-60/40`}
       >
         <div className="left">
           <div className="experiences">
@@ -111,7 +111,7 @@ export default function L1({ data }) {
               experiences.map((experience, index) => (
                 <article
                   key={index}
-                  className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
+                  className={`p-2`}
                 >
                   <h3 className="text-lg font-bold">
                     {experience.companyName}
@@ -150,7 +150,7 @@ export default function L1({ data }) {
               educations.map((education, index) => (
                 <article
                   key={index}
-                  className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
+                  className={`p-2`}
                 >
                   <h3 className="text-lg font-bold">{education.name}</h3>
                   <p>{education.institute}</p>
@@ -169,7 +169,7 @@ export default function L1({ data }) {
               Skills
             </h2>
             <article
-              className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 flex gap-2 flex-wrap p-2`}
+              className={`flex gap-2 flex-wrap p-2`}
             >
               {skills.map((skill, index) => (
                 <span
@@ -192,7 +192,7 @@ export default function L1({ data }) {
               return (
                 <article
                   key={index}
-                  className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
+                  className={`p-2`}
                 >
                   <h3 className="text-lg font-bold">{cert.name}</h3>
                   <p>{cert.institute}</p>
@@ -221,7 +221,7 @@ export default function L1({ data }) {
               projects.length > 0 &&
               projects.map((project, index) => (
                 <article key={index}
-                  className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 p-2`}
+                  className={`p-2`}
                 >
                   <h3 className="text-lg font-bold">{project.name}</h3>
                   <p>{project.stack}</p>
@@ -250,7 +250,7 @@ export default function L1({ data }) {
               Languages
             </h2>
             <article
-              className={`border-2 border-${accentColor}-100 dark:border-${accentColor}-900 flex gap-2 flex-wrap p-2`}
+              className={`flex gap-2 flex-wrap p-2`}
             >
               {languages.map((language, index) => (
                 <span

@@ -1,9 +1,9 @@
 import { createContext, useContext, useState } from "react";
 
-export const EditorCotext = createContext();
+export const EditorContext = createContext();
 
 export const useEditor = () => {
-  return useContext(EditorCotext);
+  return useContext(EditorContext);
 };
 
 export function EditorProvider(props) {
@@ -104,8 +104,8 @@ export function EditorProvider(props) {
   };
 
   return (
-    <EditorCotext.Provider value={value}>
+    <EditorContext.Provider value={value}>
       {props.children}
-    </EditorCotext.Provider>
+    </EditorContext.Provider>
   );
 }

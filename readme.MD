@@ -10,3 +10,8 @@
 - Quil JS 
 - Novo Ref
 - Demo
+- Left sidebar for templates 
+- input type month year 
+- maintain all template details in editor context
+- for future custom colors 
+- Take UI to the next level

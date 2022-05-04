@@ -3,11 +3,13 @@ import { useEditor } from "../../context/EditorContext";
 
 export function Header({ state }) {
  const { resumeRef } = state;
-    const { setLayout } = useEditor();
+    const { layout, setLayout } = useEditor();
 
     const SwitchLayout = (e) => {
         setLayout(e.target.value)
     }
+
+    console.log(layout)
 
     return (
         <>
