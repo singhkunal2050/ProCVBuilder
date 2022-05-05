@@ -117,11 +117,13 @@ function GroupedInput({ remove, index }) {
         name={`educations.${index}.institute`}
       />
       <Field
+        type="date"
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="Year From"
         name={`educations.${index}.year_from`}
       />
       <Field
+        type="date"
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="Year To"
         name={`educations.${index}.year_to`}

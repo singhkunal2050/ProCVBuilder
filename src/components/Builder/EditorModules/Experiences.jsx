@@ -118,11 +118,13 @@ function GroupedInput({ remove, index }) {
         name={`experiences.${index}.role`}
       />
       <Field
+        type="date"
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="Year From"
         name={`experiences.${index}.from`}
       />
       <Field
+        type="date"
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="Year To"
         name={`experiences.${index}.to`}

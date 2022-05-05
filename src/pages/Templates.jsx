@@ -31,7 +31,7 @@ function Templates() {
 
           {layoutCollection.map((layout, index) => (
             <article key={index} data-template={layout.name}  className='border-2 shadow-lg p-2 cursor-pointer ' onClick={openCurrentTemplate}>
-              <img src={`//source.unsplash.com/500x50${index}?random`} alt={layout.name} />
+              <img src={layout.thumbnail} alt={layout.name} />
               <h5 className='text-lg'>{layout.name}</h5>
              </article>  
           ))}

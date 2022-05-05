@@ -1,4 +1,6 @@
 import { createContext, useContext, useState } from "react";
+import template1 from '../assets/resumes/template1.jpg'
+import template2 from '../assets/resumes/template2.jpg'
 
 export const EditorContext = createContext();
 
@@ -7,8 +9,8 @@ export const useEditor = () => {
 };
 
 export const layoutCollection = [
-  { name: "L1", thumbnail: "https://via.placeholder.com/150x150" },
-  { name: "L2", thumbnail: "https://via.placeholder.com/150x150" },
+  { name: "L1", thumbnail: template1 },
+  { name: "L2", thumbnail: template2 },
 ];
 
 export function EditorProvider(props) {
