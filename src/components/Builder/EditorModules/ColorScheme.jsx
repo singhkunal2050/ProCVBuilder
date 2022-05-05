@@ -6,7 +6,7 @@ import { useEditor } from "../../../context/EditorContext";
 function ColorScheme() {
   const [show, setshow] = useState(false);
   const { editor, setEditor } = useEditor();
-  const colors = ["indigo", "rose", "blue", "emerald","black"]
+  const colors = ["indigo", "rose", "blue", "emerald","slate"]
 
   const handleColorScheme = (e) => {
     setEditor({

@@ -49,19 +49,25 @@ export default function L1({ data }) {
         <div className="bg-blue-800 text-blue-800 border-blue-800"></div>
         <div className="bg-blue-900 text-blue-900 border-blue-900"></div>
       </div>
+      <div className="bg-slate-600 text-slate-600 border-slate-600 marker:text-slate-700 hidden ">
+        <div className="bg-slate-500 text-slate-500 border-slate-500"></div>
+        <div className="bg-slate-400 text-slate-400 border-slate-400"></div>
+        <div className="bg-slate-300 text-slate-300 border-slate-300"></div>
+        <div className="bg-slate-200 text-slate-200 border-slate-200"></div>
+        <div className="bg-slate-100 text-slate-100 border-slate-100"></div>
+        <div className="bg-slate-700 text-slate-700 border-slate-700"></div>
+        <div className="bg-slate-800 text-slate-800 border-slate-800"></div>
+        <div className="bg-slate-900 text-slate-900 border-slate-900"></div>
+      </div>
       <section className="top-section flex">
-        <div
-          className={`flex flex-col p-2`}
-        >
+        <div className={`flex flex-col p-2`}>
           <h2 className={`text-4xl font-bold text-${accentColor}-600`}>
             {firstname} {lastname}
           </h2>
           <p>{designation}</p>
           <p>{city}</p>
         </div>
-        <div
-          className={`flex-1  flex flex-col items-end p-2`}
-        >
+        <div className={`flex-1  flex flex-col items-end p-2`}>
           {email && <a href={`mailto:${email}`}>{email}</a>}
           {phone && <a href={`tel:${phone}`}> {phone}</a>}
           <div className="flex flex-col">
@@ -95,9 +101,7 @@ export default function L1({ data }) {
           </div>
         </div>
       </section>
-      <section
-        className={`middle-section grid grid-cols-60/40`}
-      >
+      <section className={`middle-section grid grid-cols-60/40`}>
         <div className="left">
           <div className="experiences">
             <h2
@@ -109,16 +113,14 @@ export default function L1({ data }) {
             {experiences &&
               experiences.length > 0 &&
               experiences.map((experience, index) => (
-                <article
-                  key={index}
-                  className={`p-2`}
-                >
+                <article key={index} className={`p-2`}>
                   <h3 className="text-lg font-bold">
                     {experience.companyName}
                   </h3>
                   <p>{experience.role}</p>
                   <p>
-                    {experience.from.substr(0,7)} - {experience.to.substr(0,7)}
+                    {experience.from.substr(0, 7)} -{" "}
+                    {experience.to.substr(0, 7)}
                   </p>
                   <ul
                     className={`points list-disc ml-6 text-sm marker:text-${accentColor}-700`}
@@ -148,14 +150,12 @@ export default function L1({ data }) {
             {educations &&
               educations.length > 0 &&
               educations.map((education, index) => (
-                <article
-                  key={index}
-                  className={`p-2`}
-                >
+                <article key={index} className={`p-2`}>
                   <h3 className="text-lg font-bold">{education.name}</h3>
                   <p>{education.institute}</p>
                   <p>
-                    {education.year_from.substr(0,7)} - {education.year_to.substr(0,7)}
+                    {education.year_from.substr(0, 7)} -{" "}
+                    {education.year_to.substr(0, 7)}
                   </p>
                 </article>
               ))}
@@ -168,9 +168,7 @@ export default function L1({ data }) {
             >
               Skills
             </h2>
-            <article
-              className={`flex gap-2 flex-wrap p-2`}
-            >
+            <article className={`flex gap-2 flex-wrap p-2`}>
               {skills.map((skill, index) => (
                 <span
                   key={index}
@@ -190,13 +188,10 @@ export default function L1({ data }) {
 
             {certifications.map((cert, index) => {
               return (
-                <article
-                  key={index}
-                  className={`p-2`}
-                >
+                <article key={index} className={`p-2`}>
                   <h3 className="text-lg font-bold">{cert.name}</h3>
                   <p>{cert.institute}</p>
-                  <p>{cert.year.substr(0,7)}</p>
+                  <p>{cert.year.substr(0, 7)}</p>
                   <div
                     className={`stars text-${accentColor}-700 flex gap-1 text-xs`}
                   >
@@ -220,13 +215,11 @@ export default function L1({ data }) {
             {projects &&
               projects.length > 0 &&
               projects.map((project, index) => (
-                <article key={index}
-                  className={`p-2`}
-                >
+                <article key={index} className={`p-2`}>
                   <h3 className="text-lg font-bold">{project.name}</h3>
                   <p>{project.stack}</p>
                   <p>
-                    {project.from.substr(0,7)} - {project.to.substr(0,7)}
+                    {project.from.substr(0, 7)} - {project.to.substr(0, 7)}
                   </p>
                   <ul
                     className={`points list-disc ml-6 text-sm marker:text-${accentColor}-700`}
@@ -249,9 +242,7 @@ export default function L1({ data }) {
             >
               Languages
             </h2>
-            <article
-              className={`flex gap-2 flex-wrap p-2`}
-            >
+            <article className={`flex gap-2 flex-wrap p-2`}>
               {languages.map((language, index) => (
                 <span
                   key={index}
