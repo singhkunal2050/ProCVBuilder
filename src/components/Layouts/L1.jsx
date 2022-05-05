@@ -118,7 +118,7 @@ export default function L1({ data }) {
                   </h3>
                   <p>{experience.role}</p>
                   <p>
-                    {experience.from} - {experience.to}
+                    {experience.from.substr(0,7)} - {experience.to.substr(0,7)}
                   </p>
                   <ul
                     className={`points list-disc ml-6 text-sm marker:text-${accentColor}-700`}
@@ -155,7 +155,7 @@ export default function L1({ data }) {
                   <h3 className="text-lg font-bold">{education.name}</h3>
                   <p>{education.institute}</p>
                   <p>
-                    {education.year_from} - {education.year_to}
+                    {education.year_from.substr(0,7)} - {education.year_to.substr(0,7)}
                   </p>
                 </article>
               ))}
@@ -196,7 +196,7 @@ export default function L1({ data }) {
                 >
                   <h3 className="text-lg font-bold">{cert.name}</h3>
                   <p>{cert.institute}</p>
-                  <p>{cert.year}</p>
+                  <p>{cert.year.substr(0,7)}</p>
                   <div
                     className={`stars text-${accentColor}-700 flex gap-1 text-xs`}
                   >
@@ -226,7 +226,7 @@ export default function L1({ data }) {
                   <h3 className="text-lg font-bold">{project.name}</h3>
                   <p>{project.stack}</p>
                   <p>
-                    {project.from} - {project.to}
+                    {project.from.substr(0,7)} - {project.to.substr(0,7)}
                   </p>
                   <ul
                     className={`points list-disc ml-6 text-sm marker:text-${accentColor}-700`}

@@ -26,10 +26,10 @@ export function Header({ state }) {
                 content={() => resumeRef.current}
             />
 
-            <select className="p-2 dark:bg-slate-700" onChange={SwitchLayout}>
+            <select className="p-2 dark:bg-slate-700" onChange={SwitchLayout} defaultValue={layout}>
                 <option value="" disabled>Choose Layout</option>
                 {layoutCollection.map((l, index) => (
-                    layout===l.name ?  <option selected={true} key={index} value={l.name}>{l.name}</option> : <option key={index} value={l.name}>{l.name}</option>
+                    <option key={index} value={l.name}>{l.name}</option>
                 ))}
             </select>
         </>

@@ -117,6 +117,7 @@ function GroupedInput({ remove, index }) {
         placeholder="Institute"
         name={`certifications.${index}.institute`}
       />
+      
       <Field
         type="date"
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "

@@ -36,8 +36,8 @@ export function EditorProvider(props) {
       {
         companyName: "AA Infotech",
         role: "Software Engineer",
-        from: "2018-Jan",
-        to: "2020-Jan",
+        from: "2018-01-20",
+        to: "2020-01-20",
         highlights: [
           "Developed a web application for managing the inventory of a company",
           "Developed a web application for managing the inventory of a company",
@@ -47,8 +47,8 @@ export function EditorProvider(props) {
       {
         companyName: "AA Infotech",
         role: "Software Engineer",
-        from: "2018-Jan",
-        to: "2020-Jan",
+        from: "2018-01-20",
+        to: "2020-01-20",
         highlights: [
           "Developed a web application for managing the inventory of a company",
           "Developed a web application for managing the inventory of a company",
@@ -60,39 +60,39 @@ export function EditorProvider(props) {
       {
         name: "AWS Certified Solutions Architect - Associate",
         institute: "Amazon Web Services",
-        year: 2020,
+        year: "2020-01-20",
       },
       {
         name: "AWS Certified Solutions Architect - Developer",
         institute: "Amazon Web Services",
-        year: 2020,
+        year: "2020-01-20",
       },
       {
         name: "AWS Certified Solutions Architect - Tester",
         institute: "Amazon Web Services",
-        year: 2021,
+        year: "2020-01-20",
       },
     ],
     educations: [
       {
         name: "BCS",
         institute: "Pune University",
-        year_from: 2020,
-        year_to: 2022,
+        year_from: "2020-01-20",
+        year_to: "2020-01-20",
       },
       {
         name: "MCA",
         institute: "Pune University",
-        year_from: 2022,
-        year_to: 2024,
+        year_from: "2020-01-20",
+        year_to: "2020-01-20",
       },
     ],
     projects: [
       {
         name: "Password Generator",
         stack: "React | Node | Express | MongoDB",
-        from: "2018-Jan",
-        to: "2020-Jan",
+        from: "2020-01-20",
+        to: "2020-01-20",
         highlights: [
           "Developed a web application for managing the inventory of a company",
           "Developed a web application for managing the inventory of a company",
