@@ -6,18 +6,23 @@ export const useEditor = () => {
   return useContext(EditorContext);
 };
 
+export const layoutCollection = [
+  { name: "L1", thumbnail: "https://via.placeholder.com/150x150" },
+  { name: "L2", thumbnail: "https://via.placeholder.com/150x150" },
+];
+
 export function EditorProvider(props) {
   const [layout, setLayout] = useState("L1");
 
   const [editor, setEditor] = useState({
-    accentColor : "blue",
+    accentColor: "blue",
     personal: {
       firstname: "Mike",
       lastname: "Alpha",
       email: "mikealpha@gmail.com",
       phone: "9999999999",
-      designation:"Developer",
-      city:"Madrid",
+      designation: "Developer",
+      city: "Madrid",
       website: "demo.com",
       facebookLink: "facebook.com",
       twitterLink: "twitter.com",
@@ -52,35 +57,35 @@ export function EditorProvider(props) {
     certifications: [
       {
         name: "AWS Certified Solutions Architect - Associate",
-        institute : "Amazon Web Services",
-        year : 2020
+        institute: "Amazon Web Services",
+        year: 2020,
       },
       {
         name: "AWS Certified Solutions Architect - Developer",
-        institute : "Amazon Web Services",
-        year : 2020
+        institute: "Amazon Web Services",
+        year: 2020,
       },
       {
         name: "AWS Certified Solutions Architect - Tester",
-        institute : "Amazon Web Services",
-        year : 2021
-      }
+        institute: "Amazon Web Services",
+        year: 2021,
+      },
     ],
     educations: [
       {
         name: "BCS",
-        institute : "Pune University",
-        year_from : 2020,
-        year_to : 2022
+        institute: "Pune University",
+        year_from: 2020,
+        year_to: 2022,
       },
       {
         name: "MCA",
-        institute : "Pune University",
-        year_from : 2022,
-        year_to : 2024
-      }
+        institute: "Pune University",
+        year_from: 2022,
+        year_to: 2024,
+      },
     ],
-    projects:[
+    projects: [
       {
         name: "Password Generator",
         stack: "React | Node | Express | MongoDB",
@@ -93,7 +98,7 @@ export function EditorProvider(props) {
         ],
       },
     ],
-    languages : ["English", "Hindi", "Marathi"],
+    languages: ["English", "Hindi", "Marathi"],
   });
 
   const value = {

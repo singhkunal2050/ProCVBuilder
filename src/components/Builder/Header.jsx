@@ -1,5 +1,5 @@
 import ReactToPrint from "react-to-print";
-import { useEditor } from "../../context/EditorContext";
+import { useEditor , layoutCollection } from "../../context/EditorContext";
 
 export function Header({ state }) {
  const { resumeRef } = state;
@@ -28,8 +28,9 @@ export function Header({ state }) {
 
             <select className="p-2 dark:bg-slate-700" onChange={SwitchLayout}>
                 <option value="" disabled>Choose Layout</option>
-                <option value="L1">L1</option>
-                <option value="L2">L2</option>
+                {layoutCollection.map((l, index) => (
+                    layout==l.name ?  <option selected={true} key={index} value={l.name}>{l.name}</option> : <option key={index} value={l.name}>{l.name}</option>
+                ))}
             </select>
         </>
     )
