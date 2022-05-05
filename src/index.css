@@ -16,3 +16,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@page :first {
+  margin: 0;
+  box-shadow: none;
+  border:0;
+}
+
+@media print
+{
+    .layout { border-block:  none !important; } 
+}

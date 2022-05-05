@@ -27,7 +27,7 @@ export default function L1({ data }) {
 
   return (
     <section
-      className={`border-2 border-${accentColor}-300 dark:bg-slate-800 dark:text-gray-200 flex-1 p-2 shadow-xl mt-4`}
+      className={` layout border-2 border-${accentColor}-300 h-[1050px] dark:bg-slate-800 dark:text-gray-200 flex-1 p-2 shadow-xl`}
     >
       <div className="bg-rose-600 text-rose-600 border-rose-600 marker:text-rose-700 hidden">
         <div className="bg-rose-500 text-rose-500 border-rose-500"></div>
