@@ -117,11 +117,13 @@ function GroupedInput({ remove, index }) {
         name={`projects.${index}.stack`}
       />
       <Field
+        type="date"
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="Year From"
         name={`projects.${index}.from`}
       />
       <Field
+          type="date"
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
         placeholder="Year To"
         name={`projects.${index}.to`}
