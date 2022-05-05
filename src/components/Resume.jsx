@@ -17,7 +17,7 @@ function Resume() {
           <div className="flex flex-col">
             <div className="flex gap-1 justify-end">
               <FaFacebook />
-              <FaGithub />
+              <FaGithub />  
               <FaLinkedin /> <FaTwitter />
             </div>
             @rahulrsingh

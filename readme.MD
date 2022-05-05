@@ -15,3 +15,4 @@
 - maintain all template details in editor context
 - for future custom colors 
 - Take UI to the next level
+- Compare with Novo or other builders 
