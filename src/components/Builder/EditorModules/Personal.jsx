@@ -1,23 +1,17 @@
 import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useEditor } from "../../../context/EditorContext";
-import { useState  } from "react";
+import { useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";
 
 const PersonalSchema = Yup.object().shape({
-  firstname: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
-  lastname: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
+  firstname: Yup.string().min(2, "Too Short!").max(50, "Too Long!"),
+  // .required("Required"),
+  lastname: Yup.string().min(2, "Too Short!").max(50, "Too Long!"),
+  // .required("Required"),
   email: Yup.string().email("Invalid email").required("Required"),
-  phone: Yup.string()
-    .min(10, "Too Short!")
-    .max(18, "Too Long!")
-    .required("Required"),
+  phone: Yup.string().min(10, "Too Short!").max(18, "Too Long!"),
+  // .required("Required"),
   website: Yup.string(),
   facebookLink: Yup.string(),
   twitterLink: Yup.string(),
@@ -27,7 +21,7 @@ const PersonalSchema = Yup.object().shape({
 
 export function Personal() {
   const { editor, setEditor } = useEditor();
-  const [show, setshow] = useState(false)
+  const [show, setshow] = useState(false);
 
   const handleSubmit = (values, actions) => {
     actions.setSubmitting(true);
@@ -42,8 +36,13 @@ export function Personal() {
   };
   return (
     <div className="pb-4 mb-4 border-b">
-      <h3 className="font-bold text-xl cursor-pointer p-2 flex gap-2 items-center" onClick={()=>setshow(!show)}>Personal <AiOutlineUser/></h3>
-      <div className={`option ${!show && 'hidden'}`}>
+      <h3
+        className="font-bold text-xl cursor-pointer p-2 flex gap-2 items-center"
+        onClick={() => setshow(!show)}
+      >
+        Personal <AiOutlineUser />
+      </h3>
+      <div className={`option ${!show && "hidden"}`}>
         <Formik
           initialValues={editor.personal}
           validationSchema={PersonalSchema}
@@ -118,7 +117,9 @@ export function Personal() {
                   type="text"
                   placeholder="Designation"
                   className={`bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 ${
-                    errors.designation && touched.designation ? "is-invalid" : ""
+                    errors.designation && touched.designation
+                      ? "is-invalid"
+                      : ""
                   }`}
                 />
                 {errors.designation && touched.designation && (
