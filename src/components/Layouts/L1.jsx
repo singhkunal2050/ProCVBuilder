@@ -67,7 +67,7 @@ export default function L1({ data }) {
           <p>{designation}</p>
           <p>{city}</p>
         </div>
-        <div className={`flex-1  flex flex-col items-end p-2`}>
+        <div className={`flex-1  flex flex-wrap flex-col items-end p-2`}>
           {email && <a href={`mailto:${email}`}>{email}</a>}
           {phone && <a href={`tel:${phone}`}> {phone}</a>}
           <div className="flex flex-col">
@@ -181,7 +181,7 @@ export default function L1({ data }) {
           </div>
           <div className="certifications">
             <h2
-              className={`text-2xl font-bold capitalize mb-1 p-2 text-${accentColor}-600`}
+              className={`text-2xl font-bold break-all capitalize mb-1 p-2 text-${accentColor}-600`}
             >
               Certifications
             </h2>

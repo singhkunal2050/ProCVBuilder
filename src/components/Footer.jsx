@@ -10,7 +10,7 @@ function Footer() {
             Made with ♥
           </p>
           <p>
-            Using React | TailwindCSS | Redux 
+            Using React | TailwindCSS
           </p>
         </section>
       </Container>
