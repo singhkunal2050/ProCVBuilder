@@ -17,4 +17,4 @@
 - Take UI to the next level
 - Compare with Novo or other builders 
 - Error Boundary Use for learning
-- 
+- create 10 templates
