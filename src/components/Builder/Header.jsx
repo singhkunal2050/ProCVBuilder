@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import ReactToPrint from "react-to-print";
 import { useEditor , layoutCollection } from "../../context/EditorContext";
 
@@ -11,27 +12,30 @@ export function Header({ state }) {
 
     console.log(layout)
 
-    return (
-        <>
-            <h4 className="text-base md:text-2xl font-bold py-4 text-center bg-gray-900 text-white">
-                Resume Builder
-            </h4>
+    useEffect(()=>{
+        console.log('header rendered')
+        console.log(layout)
+    },[layout])
 
+    return (
+        <section className="max-w-4xl flex justify-between my-4">
+             <h6 className="p-4 font-xl ">{layout}</h6> 
+           
             <ReactToPrint
                 trigger={() => (
-                    <button className="bg-gray-900 text-white px-5 font-bold p-2 mx-auto fixed bottom-10 left-20">
+                    <button className="bg-gray-900 text-white px-5   font-bold ">
                         Print
                     </button>
                 )}
                 content={() => resumeRef.current}
             />
 
-            <select className="p-2 dark:bg-slate-700" onChange={SwitchLayout} defaultValue={layout}>
+            {/* <select className="p-2 dark:bg-slate-700" onChange={SwitchLayout} defaultValue={layout}>
                 <option value="" disabled>Choose Layout</option>
                 {layoutCollection.map((l, index) => (
                     <option key={index} value={l.name}>{l.name}</option>
                 ))}
-            </select>
-        </>
+            </select> */}
+        </section>
     )
 }
