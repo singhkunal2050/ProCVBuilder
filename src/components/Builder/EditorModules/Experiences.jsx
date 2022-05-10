@@ -32,12 +32,12 @@ export function Experiences() {
   return (
     <div className="pb-4 mb-4 border-b">
       <h3
-        className="font-bold text-xl cursor-pointer p-2 flex gap-2 items-center"
+        className="font-bold text-base cursor-pointer p-2 flex gap-2 items-center"
         onClick={() => setshow(!show)}
       >
         Experiences <CgWorkAlt />{" "}
       </h3>
-      <div className={`option ${!show && "hidden"}`}>
+      <div className={`option text-xs ${!show && "hidden"}`}>
         <Formik
           initialValues={{ experiences: editor.experiences }}
           validationSchema={ArrayOfExperiencesSchema}

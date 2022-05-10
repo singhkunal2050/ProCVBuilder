@@ -17,12 +17,12 @@ function ColorScheme() {
 
   return (
     <div className="pb-4 mb-4 border-b">
-      <h3 className="font-bold text-xl cursor-pointer p-2 flex gap-2 items-center" onClick={() => setshow(!show)}>
+      <h3 className="font-bold text-base cursor-pointer p-2 flex gap-2 items-center" onClick={() => setshow(!show)}>
         Color Scheme <AiOutlineBgColors />{" "}
       </h3>
 
-      <div className={`option ${!show && "hidden"}`}>
-        <div className="grid grid-cols-2">
+      <div className={`option text-xs ${!show && "hidden"}`}>
+        <div className="grid grid-cols-2 text-sm">
           {colors.map((color, index) => (
             <label key={index} htmlFor={color} className={`text-${color}-500 p-1 flex items-center gap-1`}>
               <input id={color} name="color" type="radio" value={color} onChange={handleColorScheme} /> <span className="capitalize">{color}</span>

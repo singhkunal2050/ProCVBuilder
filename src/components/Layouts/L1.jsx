@@ -123,7 +123,7 @@ export default function L1({ data }) {
                     {experience.to.substr(0, 7)}
                   </p>
                   <ul
-                    className={`points list-disc ml-6 text-sm marker:text-${accentColor}-700`}
+                    className={`points list-disc ml-6 text-xs marker:text-${accentColor}-700`}
                   >
                     <li>
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -222,7 +222,7 @@ export default function L1({ data }) {
                     {project.from.substr(0, 7)} - {project.to.substr(0, 7)}
                   </p>
                   <ul
-                    className={`points list-disc ml-6 text-sm marker:text-${accentColor}-700`}
+                    className={`points list-disc ml-6 text-xs marker:text-${accentColor}-700`}
                   >
                     <li>
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.

@@ -25,8 +25,8 @@ export function Skills() {
   };
   return (
     <div className="pb-4 mb-4 border-b">
-      <h3 className="font-bold text-xl cursor-pointer p-2 flex gap-2 items-center" onClick={()=>setshow(!show)}>Skills <AiOutlineTool/> </h3>
-      <div className={`option ${!show && "hidden"}`}>
+      <h3 className="font-bold text-base cursor-pointer p-2 flex gap-2 items-center" onClick={()=>setshow(!show)}>Skills <AiOutlineTool/> </h3>
+      <div className={`option text-xs ${!show && "hidden"}`}>
         <Formik
           initialValues={{ skills: editor.skills }}
           validationSchema={SkillsSchema}

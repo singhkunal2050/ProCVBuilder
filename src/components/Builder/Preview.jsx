@@ -8,7 +8,7 @@ export function Preview({ state }) {
   const CurrentLayout = React.lazy(() => import("../Layouts/" + layout));
   console.log(editor)
   return (
-    <section className="min-h-[1200px]">
+    <section className="min-h-[1200px] max-w-4xl mr-auto">
       <Suspense fallback={<div>Loading...</div>}>
         <div ref={resumeRef}>
           <CurrentLayout data={editor} />

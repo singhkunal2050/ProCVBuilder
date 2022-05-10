@@ -1,8 +1,5 @@
 import React from 'react'
 import Container from "../components/Container"
-// import template1 from '../assets/resumes/template1.jpg'
-// import template2 from '../assets/resumes/template2.jpg'
-// import template3 from '../assets/resumes/template6.jpg'
 import { useNavigate } from "react-router-dom";
 import { useEditor , layoutCollection} from '../context/EditorContext'
 

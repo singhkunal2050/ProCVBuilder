@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { Header, Preview, Editor } from "./Builder"
+import TemplateSidebar from "./Builder/TemplateSidebar";
 
 function ResumeBuilder() {
   const resumeRef = useRef();
@@ -9,6 +10,7 @@ function ResumeBuilder() {
       <Header  state={{ resumeRef }}  />
       <Preview state={{ resumeRef }} />
       <Editor />
+      <TemplateSidebar/>
     </section>
   );
 }
