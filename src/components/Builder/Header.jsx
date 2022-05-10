@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import ReactToPrint from "react-to-print";
-import { useEditor , layoutCollection } from "../../context/EditorContext";
+import { useEditor  } from "../../context/EditorContext";
 
 export function Header({ state }) {
  const { resumeRef } = state;
-    const { layout, setLayout } = useEditor();
+    const { layout } = useEditor();
 
-    const SwitchLayout = (e) => {
-        setLayout(e.target.value)
-    }
+    // const SwitchLayout = (e) => {
+    //     setLayout(e.target.value)
+    // }
 
     console.log(layout)
 
