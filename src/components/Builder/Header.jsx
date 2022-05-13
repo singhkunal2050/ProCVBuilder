@@ -5,11 +5,6 @@ import { useEditor  } from "../../context/EditorContext";
 export function Header({ state }) {
  const { resumeRef } = state;
     const { layout } = useEditor();
-
-    // const SwitchLayout = (e) => {
-    //     setLayout(e.target.value)
-    // }
-
     console.log(layout)
 
     useEffect(()=>{
@@ -19,7 +14,7 @@ export function Header({ state }) {
 
     return (
         <section className="max-w-4xl flex justify-between my-4">
-             <h6 className="p-4 font-xl ">{layout}</h6> 
+             <h6 className="p-4 font-xl ">{layout.name}</h6> 
            
             <ReactToPrint
                 trigger={() => (
@@ -29,13 +24,6 @@ export function Header({ state }) {
                 )}
                 content={() => resumeRef.current}
             />
-
-            {/* <select className="p-2 dark:bg-slate-700" onChange={SwitchLayout} defaultValue={layout}>
-                <option value="" disabled>Choose Layout</option>
-                {layoutCollection.map((l, index) => (
-                    <option key={index} value={l.name}>{l.name}</option>
-                ))}
-            </select> */}
         </section>
     )
 }

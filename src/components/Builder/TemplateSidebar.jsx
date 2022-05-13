@@ -9,8 +9,10 @@ function TemplateSidebar() {
 
   let navigate = useNavigate();
   function openCurrentTemplate(e) {
-    setLayout(e.target.closest("article").dataset.template);
-    navigate("/builder");
+    let {name , template , thumbnail} = e.target.closest("article").dataset
+    console.log(name , template , thumbnail)
+    setLayout({name:name , template:template , thumbnail:thumbnail});
+    // navigate("/builder");
   }
 
   return (
@@ -42,7 +44,9 @@ function TemplateSidebar() {
           {layoutCollection.map((layout, index) => (
             <article
               key={index}
-              data-template={layout.name}
+              data-template={layout.template}
+              data-name={layout.name}
+              data-thumbnail={layout.thumbnail}
               className="shadow-lg p-2 cursor-pointer "
               onClick={openCurrentTemplate}
             >

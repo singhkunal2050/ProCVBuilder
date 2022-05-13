@@ -4,9 +4,8 @@ import { useEditor } from "../../context/EditorContext";
 export function Preview({ state }) {
   const { resumeRef } = state;
   const { editor, layout } = useEditor();
-
-  const CurrentLayout = React.lazy(() => import("../Layouts/" + layout));
-  console.log(editor)
+  // console.log(layout)
+  const CurrentLayout = React.lazy(() => import("../Layouts/" + layout.template));
   return (
     <section className="min-h-[1200px] max-w-4xl mr-auto">
       <Suspense fallback={<div>Loading...</div>}>
