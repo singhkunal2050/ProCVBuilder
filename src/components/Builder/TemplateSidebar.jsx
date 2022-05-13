@@ -15,19 +15,17 @@ function TemplateSidebar() {
 
   return (
     <section
-      className={`fixed top-0 right-0 min-h-screen w-[300px] dark:bg-slate-700 bg-white z-10 transition-all duration-300 ${
+      className={`fixed top-[72px] right-0 min-h-screen w-[300px] dark:bg-slate-700 bg-white z-10 border-l-2 transition-all duration-300 ${
         open ? "translate-x-0" : "translate-x-[100%]"
       }`}
     >
       <button
-        className={`fixed right-full z-20 dark:bg-slate-700 bg-white top-48 p-1 font-xl transition-all duration-300 ${
-          open ? "rotate-180" : "rotate-0"
-        }`}
+        className={`fixed right-full z-20 dark:bg-slate-700 bg-white top-48 p-1 font-xl transition-all duration-300 border-2 border-r-0`}
         onClick={() => setOpen(!open)}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
+          className={` ${open ? 'rotate-180' : 'rotate-0'} h-5 w-5 `}
           viewBox="0 0 20 20"
           fill="currentColor"
         >
