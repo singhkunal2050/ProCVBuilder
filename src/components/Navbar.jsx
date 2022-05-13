@@ -14,7 +14,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="text-fuchsia-700 md:text-slate-100 py-4 px-4  bg-gradient-to-r from-gray-900 to-black top-0 z-10 sticky">
+    <nav className="text-fuchsia-700 md:text-slate-100 py-4 px-4  bg-slate-900 top-0 z-10 sticky">
       <Container>
         <section className="flex justify-between items-center">
           <div className="text-2xl font-extrabold z-20">

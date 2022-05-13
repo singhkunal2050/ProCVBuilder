@@ -3,7 +3,7 @@ import Container from "./Container";
 
 function Footer() {
   return (
-    <footer className="bg-white px-2 py-10 text-white border-t-2 bg-gradient-to-r from-gray-900 to-black">
+    <footer className=" px-2 py-10 text-white  bg-slate-900">
       <Container>
         <section className="flex items-center flex-col">
           <p className="text-center flex gap-1 mx-auto">
