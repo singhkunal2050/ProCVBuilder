@@ -51,7 +51,7 @@ function TemplateSidebar() {
               onClick={openCurrentTemplate}
             >
               <img src={layout.thumbnail} alt={layout.name} />
-              <h5 className="text-lg">{layout.name}</h5>
+              <h5 className="text-xs mt-3">{layout.name}</h5>
             </article>
           ))}
         </div>
