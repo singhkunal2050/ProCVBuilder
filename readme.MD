@@ -19,3 +19,5 @@
 - Error Boundary Use for learning
 - create 10 templates
 - Add Download and other buttons
+- page trannsitions
+- nProgress on top
