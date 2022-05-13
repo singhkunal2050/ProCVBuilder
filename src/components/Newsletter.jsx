@@ -3,7 +3,7 @@ import Container from "./Container";
 
 function Newsletter() {
   return (
-    <section className="py-8 bg-gray-100 dark:bg-slate-700">
+    <section className="py-14 ">
       <Container>
         <h1 className="text-3xl md:text-5xl font-bold pb-4 text-center">Subscribe to our Newsletter 📧</h1>
 

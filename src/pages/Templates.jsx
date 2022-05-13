@@ -20,7 +20,7 @@ function Templates() {
   return (
     <div>
       <Container>
-        <h1 className="text-3xl font-bold py-4 text-center">
+        <h1 className="text-3xl md:text-5xl font-bold py-8 text-center">
           Templates
         </h1>
 
