@@ -28,7 +28,7 @@ function Templates() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           {layoutCollection.map((layout, index) => (
-            <article key={index} data-template={layout.template} data-name={layout.name} data-thumbnail={layout.thumbnail}  className='border-2 shadow-lg p-2 cursor-pointer ' onClick={openCurrentTemplate}>
+            <article key={index} data-template={layout.template} data-name={layout.name} data-thumbnail={layout.thumbnail}  className='shadow-xl border-1- p-2 cursor-pointer ' onClick={openCurrentTemplate}>
               <img src={layout.thumbnail} alt={layout.name} />
               <h5 className='text-lg'>{layout.name}</h5>
              </article>  

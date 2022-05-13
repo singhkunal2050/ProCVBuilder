@@ -9,8 +9,8 @@ export const useEditor = () => {
 };
 
 export const layoutCollection = [
-  { name: "Resume Template 1", template : "L1" , thumbnail: template1 },
-  { name: "Resume Template 1",  template : "L2"  ,  thumbnail: template2 },
+  { name: "Professional Template", template : "L1" , thumbnail: template1 },
+  { name: "Clean Concise Template",  template : "L2"  ,  thumbnail: template2 },
 ];
 
 export function EditorProvider(props) {
