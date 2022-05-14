@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useEditor, layoutCollection } from "../../context/EditorContext";
 import { BiLayer } from "react-icons/bi"
 
@@ -8,12 +7,10 @@ function TemplateSidebar() {
 
   let { layout , setLayout } = useEditor();
 
-  let navigate = useNavigate();
   function openCurrentTemplate(e) {
     let {name , template , thumbnail} = e.target.closest("article").dataset
     console.log(name , template , thumbnail)
     setLayout({name:name , template:template , thumbnail:thumbnail});
-    // navigate("/builder");
   }
 
   return (
@@ -50,7 +47,7 @@ function TemplateSidebar() {
               data-template={layoutElement.template}
               data-name={layoutElement.name}
               data-thumbnail={layoutElement.thumbnail}
-              className={`shadow-lg p-2 cursor-pointer ${layoutElement.template==layout.template ? ' bg-gray-200 dark:bg-gray-600' : ''}`}
+              className={`shadow-lg p-2 cursor-pointer ${layoutElement.template===layout.template ? ' bg-gray-200 dark:bg-gray-600' : ''}`}
               onClick={openCurrentTemplate}
             >
               <img src={layoutElement.thumbnail} alt={layoutElement.name} />

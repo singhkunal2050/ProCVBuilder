@@ -7,10 +7,10 @@ function Footer() {
       <Container>
         <section className="flex items-center flex-col">
           <p className="text-center flex gap-1 mx-auto">
-            Made with ♥
+            Made with ♥ Using
           </p>
           <p>
-            Using React | TailwindCSS
+             React | Context API | TailwindCSS
           </p>
         </section>
       </Container>
