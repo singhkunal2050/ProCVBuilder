@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useEditor, layoutCollection } from "../../context/EditorContext";
+import { BiLayer } from "react-icons/bi"
 
 function TemplateSidebar() {
   const [open, setOpen] = useState(true);
 
-  let { setLayout } = useEditor();
+  let { layout , setLayout } = useEditor();
 
   let navigate = useNavigate();
   function openCurrentTemplate(e) {
@@ -39,19 +40,21 @@ function TemplateSidebar() {
         </svg>
       </button>
       <div className="p-4 max-h-screen  overflow-y-auto ">
-        <h4>Available Templates</h4>
-        <div className="grid grid-cols-2 md">
-          {layoutCollection.map((layout, index) => (
+        <h3 className="font-bold text-base cursor-pointer p-2 flex gap-2 items-center">
+          Available Templates <BiLayer />
+        </h3>
+        <div className="grid grid-cols-2 md gap-2">
+          {layoutCollection.map((layoutElement, index) => (
             <article
               key={index}
-              data-template={layout.template}
-              data-name={layout.name}
-              data-thumbnail={layout.thumbnail}
-              className="shadow-lg p-2 cursor-pointer "
+              data-template={layoutElement.template}
+              data-name={layoutElement.name}
+              data-thumbnail={layoutElement.thumbnail}
+              className={`shadow-lg p-2 cursor-pointer ${layoutElement.template==layout.template ? ' bg-gray-200 dark:bg-gray-600' : ''}`}
               onClick={openCurrentTemplate}
             >
-              <img src={layout.thumbnail} alt={layout.name} />
-              <h5 className="text-xs mt-3">{layout.name}</h5>
+              <img src={layoutElement.thumbnail} alt={layoutElement.name} />
+              <h5 className="text-xs mt-3 font-bold">{layoutElement.name}</h5>
             </article>
           ))}
         </div>
