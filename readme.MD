@@ -21,3 +21,4 @@
 - Add Download and other buttons
 - page trannsitions
 - nProgress on top
+- create a branch with css variables color schemes 🌿🌿

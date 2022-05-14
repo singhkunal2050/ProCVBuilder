@@ -17,7 +17,7 @@ export function EditorProvider(props) {
   const [layout, setLayout] = useState({ name: "Resume Template 1", template : "L1" , thumbnail: template1 });
 
   const [editor, setEditor] = useState({
-    accentColor: "blue",
+    accentColor: "rose",
     personal: {
       firstname: "Mike",
       lastname: "Alpha",

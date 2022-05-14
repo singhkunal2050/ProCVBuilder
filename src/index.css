@@ -25,5 +25,5 @@ code {
 
 @media print
 {
-    .layout { border-block:  none !important; } 
+    .layout { border-block:  none !important; box-shadow: none !important; min-height: 100vh; } 
 }
