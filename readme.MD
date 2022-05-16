@@ -22,3 +22,4 @@
 - page trannsitions
 - nProgress on top
 - create a branch with css variables color schemes 🌿🌿
+- Try to add all features of https://e-resume.vercel.app/editor

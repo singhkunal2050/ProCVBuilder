@@ -1,29 +1,39 @@
 import { useEffect } from "react";
 import ReactToPrint from "react-to-print";
-import { useEditor  } from "../../context/EditorContext";
+import { useEditor } from "../../context/EditorContext";
+import { BiLayer , BiSave , BiUpload , BiPrinter} from "react-icons/bi"
 
 export function Header({ state }) {
- const { resumeRef } = state;
-    const { layout } = useEditor();
-    console.log(layout)
+  const { resumeRef } = state;
+  const { layout } = useEditor();
+  console.log(layout);
 
-    useEffect(()=>{
-        console.log('header rendered')
-        console.log(layout)
-    },[layout])
+  useEffect(() => {
+    console.log("header rendered");
+    console.log(layout);
+  }, [layout]);
 
-    return (
-        <section className="max-w-4xl flex justify-between my-4">
-             <h6 className="p-4 font-xl ">{layout.name}</h6> 
-           
-            <ReactToPrint
-                trigger={() => (
-                    <button className="bg-gray-900 text-white px-5   font-bold ">
-                        Print
-                    </button>
-                )}
-                content={() => resumeRef.current}
-            />
-        </section>
-    )
+  return (
+    <section className="max-w-4xl flex justify-between my-4">
+      <h6 className="pb-2 font-xl ">{layout.name}</h6>
+      <section
+        className={`fixed top-[72px] left-0 min-h-screen w-[50px] dark:bg-slate-700 bg-white z-10  transition-all duration-300 `}
+      >
+        <div className="py-4 max-h-screen  overflow-y-auto flex items-center flex-col gap-4 ">
+          <BiLayer size={30} className={"p-1 bg-slate-800 cursor-pointer"} />
+          <BiSave size={30} className={"p-1 bg-slate-800 cursor-pointer"} />
+          <BiUpload size={30} className={"p-1 bg-slate-800 cursor-pointer"} />
+          <ReactToPrint
+            trigger={() => (
+              <BiPrinter
+                size={30}
+                className={"p-1 bg-slate-800 cursor-pointer"}
+              />
+            )}
+            content={() => resumeRef.current}
+          />
+        </div>
+      </section>
+    </section>
+  );
 }

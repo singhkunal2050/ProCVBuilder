@@ -17,6 +17,10 @@ code {
     monospace;
 }
 
+*{
+  word-break: break-all;
+}
+
 @page :first {
   margin: 0;
   box-shadow: none;
