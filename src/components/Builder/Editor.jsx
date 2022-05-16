@@ -4,7 +4,7 @@ import Certifications from './EditorModules/Certifications'
 import ColorScheme from './EditorModules/ColorScheme'
 
 export function Editor() {
-    const [open, setOpen] = useState(true)
+    const [open, setOpen] = useState(false)
     return (
         <section className={`fixed  top-[72px] right-0 min-h-screen w-[300px] dark:bg-slate-900 border-l-2 border-l-gray-500 bg-gray-100 z-10 transition-all duration-300 ${open ? 'translate-x-0' : 'translate-x-full'}`}>
             <button className={` flex fixed right-full z-20 border-2 border-gray-500 border-r-0 dark:bg-slate-900 bg-gray-100 top-32 p-1 font-xl transition-all duration-300`} onClick={() => setOpen(!open)}>

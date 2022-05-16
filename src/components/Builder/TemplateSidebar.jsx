@@ -4,7 +4,7 @@ import { BiLayer } from "react-icons/bi"
 import { useLayout ,  layoutCollection} from "../../context/LayoutContext";
 
 function TemplateSidebar() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   let { layout , setLayout } = useLayout();
 
