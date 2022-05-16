@@ -8,7 +8,7 @@ export const useEditor = () => {
 
 
 export function EditorProvider(props) {
-  const [zoom, setZoom] = useState(.7);
+  const [zoom, setZoom] = useState(.9);
 
     const updateZoom = (operation) => {
       if (operation === "+") {

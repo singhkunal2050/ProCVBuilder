@@ -11,7 +11,7 @@ export function Preview({ state }) {
 
 
   return (
-    <section className={`min-h-[1200px] max-w-4xl mx-auto`} >
+    <section className={`min-h-[1200px] max-w-4xl ml-[60px] lg:mx-auto `} >
       <Suspense fallback={<div style={{background:"cyan"}}>Loading...</div>}>
         <div ref={resumeRef}>
           <CurrentLayout  />
