@@ -1,5 +1,4 @@
 import React, { Suspense } from "react";
-import { useEditor } from "../../context/EditorContext";
 import { useLayout } from "../../context/LayoutContext";
 
 export function Preview({ state }) {
