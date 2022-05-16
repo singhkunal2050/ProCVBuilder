@@ -1,4 +1,4 @@
-import { useEffect, useState  } from "react";
+// import { useState } from "react";
 import ReactToPrint from "react-to-print";
 import { useEditor } from "../../context/EditorContext";
 import {
@@ -12,28 +12,9 @@ import {
 
 export function Header({ state }) {
   const { resumeRef } = state;
-  const { layout , setLayout } = useEditor();
-  const [zoom, setZoom] = useState(1);
+  const { layout  , zoom , updateZoom} = useEditor();
+//  console.log(zoom)
 
-  useEffect(() => {
-    console.log("header rendered");
-    console.log(layout);
-  }, [layout]);
-
-  
-  const updateZoom = (operation) => {
-    if (operation === "+") {
-      if (zoom <= 1.2) {
-        setZoom(zoom + 0.1);
-      }
-    } else {
-      if (zoom >= 0.5) {
-        setZoom(zoom - 0.1);
-      }
-    }
-    setLayout({ ...layout, zoom: zoom });
-    console.log(zoom)
-  };
 
   return (
     <section className="max-w-4xl flex justify-between my-4 mx-auto">

@@ -15,6 +15,20 @@ export const layoutCollection = [
 
 export function EditorProvider(props) {
   const [layout, setLayout] = useState({ name: "Resume Template 1", template : "L1" , thumbnail: template1 });
+  const [zoom, setZoom] = useState(1);
+
+    const updateZoom = (operation) => {
+      if (operation === "+") {
+        if (zoom <= 1.5) {
+          setZoom(zoom + 0.1);
+        }
+      } else {
+        if (zoom >= 0.5) {
+          setZoom(zoom - 0.1);
+        }
+      }
+    };
+
 
   const [editor, setEditor] = useState({
     accentColor: "rose",
@@ -101,7 +115,6 @@ export function EditorProvider(props) {
       },
     ],
     languages: ["English", "Hindi", "Marathi"],
-    zoom : 1
   });
 
   const value = {
@@ -109,6 +122,8 @@ export function EditorProvider(props) {
     setEditor,
     layout,
     setLayout,
+    zoom,
+    updateZoom
   };
 
   return (

@@ -3,12 +3,12 @@ import { useEditor } from "../../context/EditorContext";
 
 export function Preview({ state }) {
   const { resumeRef } = state;
-  const { editor, layout } = useEditor();
+  const { editor, layout , zoom} = useEditor();
   // console.log(layout)  
   const CurrentLayout = React.lazy(() => import("../Layouts/" + layout.template));
   return (
     <section className={`min-h-[1200px] max-w-4xl mx-auto origin-top-left `} 
-    style={{ transform: `scale(${layout.zoom})` }}>
+    style={{ transform: `scale(${zoom})` }}>
       <Suspense fallback={<div>Loading...</div>}>
         <div ref={resumeRef}>
           <CurrentLayout data={editor} />
