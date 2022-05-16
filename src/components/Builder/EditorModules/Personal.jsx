@@ -23,8 +23,19 @@ export function Personal() {
   const { editor, setEditor } = useEditor();
   const [show, setshow] = useState(false);
 
-  const handleSubmit = (values, actions) => {
-    actions.setSubmitting(true);
+  // const handleSubmit = (values, actions) => {
+    // actions.setSubmitting(true);
+    // setEditor({
+    //   ...editor,
+    //   personal: {
+    //     ...editor.personal,
+    //     ...values,
+    //   },
+    // });
+    // actions.setSubmitting(false);
+  // };
+
+  const handleValues = (values) =>{
     setEditor({
       ...editor,
       personal: {
@@ -32,8 +43,8 @@ export function Personal() {
         ...values,
       },
     });
-    actions.setSubmitting(false);
-  };
+  }
+
   return (
     <div className="pb-4 mb-4 border-b">
       <h3
@@ -46,10 +57,9 @@ export function Personal() {
         <Formik
           initialValues={editor.personal}
           validationSchema={PersonalSchema}
-          onSubmit={handleSubmit}
         >
-          {({ errors, touched, isSubmitting }) => (
-            <Form>
+          {({ values, errors, touched, isSubmitting }) => (
+            <Form  onKeyUp={()=>handleValues(values)}>
               <div className="flex flex-col mb-2">
                 <Field
                   name="firstname"
@@ -228,18 +238,21 @@ export function Personal() {
                 )}
               </div>
 
-              <div className="flex flex-col mb-2">
+              {/* <div className="flex flex-col mb-2">
                 <button
                   type="submit"
                   className="rounded bg-gradient-to-r from-emerald-500 to-fuchsia-500 text-white p-2 font-semibold text-sm"
                 >
                   Update
                 </button>
-              </div>
+              </div> */}
             </Form>
           )}
         </Formik>
       </div>
+      
+
+
     </div>
   );
 }

@@ -1,7 +1,11 @@
 import { FaFacebook, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
+import { useEditor } from "../../context/EditorContext"
 
 export default function L1({ data }) {
+
+  const { editor , zoom } = useEditor();
+
   const {
     firstname,
     lastname,
@@ -14,7 +18,7 @@ export default function L1({ data }) {
     twitterLink,
     linkedinLink,
     githubLink,
-  } = data.personal;
+  } = editor.personal;
   const {
     skills,
     languages,
@@ -23,11 +27,12 @@ export default function L1({ data }) {
     educations,
     experiences,
     projects,
-  } = data;
+  } = editor;
 
   return (
     <section
-      className={` layout border-2 border-${accentColor}-300 min-h-[1050px] dark:bg-slate-800 dark:text-gray-200 flex-1 p-2 shadow-xl`}
+      style={{ transform: `scale(${zoom})` }}
+      className={` layout border-2 border-${accentColor}-300 min-h-[1050px] dark:bg-slate-800 dark:text-gray-200 flex-1 p-2 shadow-xl origin-top-left`}
     >
       <div className="bg-rose-600 text-rose-600 border-rose-600 marker:text-rose-700 hidden">
         <div className="bg-rose-500 text-rose-500 border-rose-500"></div>

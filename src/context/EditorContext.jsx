@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
-import template1 from '../assets/resumes/template1.jpg'
-import template2 from '../assets/resumes/template2.jpg'
+// import template1 from '../assets/resumes/template1.jpg'
+// import template2 from '../assets/resumes/template2.jpg'
 
 export const EditorContext = createContext();
 
@@ -8,13 +8,13 @@ export const useEditor = () => {
   return useContext(EditorContext);
 };
 
-export const layoutCollection = [
-  { name: "Professional Template", template : "L1" , thumbnail: template1 },
-  { name: "Clean Concise Template",  template : "L2"  ,  thumbnail: template2 },
-];
+// export const layoutCollection = [
+//   { name: "Professional Template", template : "L1" , thumbnail: template1 },
+//   { name: "Clean Concise Template",  template : "L2"  ,  thumbnail: template2 },
+// ];
 
 export function EditorProvider(props) {
-  const [layout, setLayout] = useState({ name: "Resume Template 1", template : "L1" , thumbnail: template1 });
+  // const [layout, setLayout] = useState({ name: "Resume Template 1", template : "L1" , thumbnail: template1 });
   const [zoom, setZoom] = useState(1);
 
     const updateZoom = (operation) => {
@@ -120,8 +120,8 @@ export function EditorProvider(props) {
   const value = {
     editor,
     setEditor,
-    layout,
-    setLayout,
+    // layout,
+    // setLayout,
     zoom,
     updateZoom
   };

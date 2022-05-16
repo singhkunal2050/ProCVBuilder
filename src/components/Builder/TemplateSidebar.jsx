@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { useEditor, layoutCollection } from "../../context/EditorContext";
+// import { useEditor, layoutCollection } from "../../context/EditorContext";
 import { BiLayer } from "react-icons/bi"
+import { useLayout ,  layoutCollection} from "../../context/LayoutContext";
 
 function TemplateSidebar() {
   const [open, setOpen] = useState(true);
 
-  let { layout , setLayout } = useEditor();
+  let { layout , setLayout } = useLayout();
 
   function openCurrentTemplate(e) {
     let {name , template , thumbnail} = e.target.closest("article").dataset

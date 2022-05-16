@@ -1,14 +1,15 @@
 import React from 'react'
 import Container from "../components/Container"
 import { useNavigate } from "react-router-dom";
-import { useEditor , layoutCollection} from '../context/EditorContext'
+// import { useEditor , layoutCollection} from '../context/EditorContext'
+import { useLayout , layoutCollection} from '../context/LayoutContext'
 
 
 function Templates() {
 
   console.log(layoutCollection)
 
-  let { setLayout } = useEditor()
+  let { setLayout } = useLayout()
   
   let navigate  = useNavigate();
   function openCurrentTemplate(e){

@@ -1,17 +1,21 @@
 import React, { Suspense } from "react";
 import { useEditor } from "../../context/EditorContext";
+import { useLayout } from "../../context/LayoutContext";
 
 export function Preview({ state }) {
   const { resumeRef } = state;
-  const { editor, layout , zoom} = useEditor();
-  // console.log(layout)  
+  const { layout } = useLayout(); 
+  console.log({"layout rendereed":layout})  
+  
+
   const CurrentLayout = React.lazy(() => import("../Layouts/" + layout.template));
+
+
   return (
-    <section className={`min-h-[1200px] max-w-4xl mx-auto origin-top-left `} 
-    style={{ transform: `scale(${zoom})` }}>
-      <Suspense fallback={<div>Loading...</div>}>
+    <section className={`min-h-[1200px] max-w-4xl mx-auto`} >
+      <Suspense fallback={<div style={{background:"cyan"}}>Loading...</div>}>
         <div ref={resumeRef}>
-          <CurrentLayout data={editor} />
+          <CurrentLayout  />
         </div>
       </Suspense>
 

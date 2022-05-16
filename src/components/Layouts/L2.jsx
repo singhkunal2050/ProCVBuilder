@@ -1,10 +1,12 @@
 import { FaFacebook, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
+import { useEditor } from "../../context/EditorContext"
 
 export default function L2({ data }) {
-  const { firstname, lastname, email, phone } = data.personal;
+  const { editor , zoom } = useEditor();
+  const { firstname, lastname, email, phone } = editor.personal;
   return (
-    <section className="border-2 border-indigo-300 border-l-8 border-l-indigo-800 flex-1 p-2">
+    <section style={{ transform: `scale(${zoom})` }} className="border-2 border-indigo-300 border-l-8 border-l-indigo-800 flex-1 p-2  origin-top-left">
       <section className="top-section flex flex-col items-center">
         <div className="flex flex-col text-center dark:border-indigo-900 p-2  ">
           <h2 className="text-4xl font-bold text-indigo-600">{firstname} {lastname}</h2>
