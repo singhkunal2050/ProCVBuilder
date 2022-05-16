@@ -1,20 +1,42 @@
-import { useEffect } from "react";
+import { useEffect, useState  } from "react";
 import ReactToPrint from "react-to-print";
 import { useEditor } from "../../context/EditorContext";
-import { BiLayer , BiSave , BiUpload , BiPrinter} from "react-icons/bi"
+import {
+  BiLayer,
+  BiSave,
+  BiUpload,
+  BiPrinter,
+  BiZoomIn,
+  BiZoomOut,
+} from "react-icons/bi";
 
 export function Header({ state }) {
   const { resumeRef } = state;
-  const { layout } = useEditor();
-  console.log(layout);
+  const { layout , setLayout } = useEditor();
+  const [zoom, setZoom] = useState(1);
 
   useEffect(() => {
     console.log("header rendered");
     console.log(layout);
   }, [layout]);
 
+  
+  const updateZoom = (operation) => {
+    if (operation === "+") {
+      if (zoom <= 1.2) {
+        setZoom(zoom + 0.1);
+      }
+    } else {
+      if (zoom >= 0.5) {
+        setZoom(zoom - 0.1);
+      }
+    }
+    setLayout({ ...layout, zoom: zoom });
+    console.log(zoom)
+  };
+
   return (
-    <section className="max-w-4xl flex justify-between my-4">
+    <section className="max-w-4xl flex justify-between my-4 mx-auto">
       <h6 className="pb-2 font-xl ">{layout.name}</h6>
       <section
         className={`fixed top-[72px] left-0 min-h-screen w-[50px] dark:bg-slate-700 bg-white z-10  transition-all duration-300 `}
@@ -31,6 +53,16 @@ export function Header({ state }) {
               />
             )}
             content={() => resumeRef.current}
+          />
+          <BiZoomOut
+            size={30}
+            className={"p-1 bg-slate-800 cursor-pointer"}
+            onClick={() => updateZoom("-")}
+          />
+          <BiZoomIn
+            size={30}
+            className={"p-1 bg-slate-800 cursor-pointer"}
+            onClick={() => updateZoom("+")}
           />
         </div>
       </section>

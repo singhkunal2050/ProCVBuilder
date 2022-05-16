@@ -101,6 +101,7 @@ export function EditorProvider(props) {
       },
     ],
     languages: ["English", "Hindi", "Marathi"],
+    zoom : 1
   });
 
   const value = {
