@@ -21,9 +21,10 @@ function TemplateSidebar() {
       }`}
     >
       <button
-        className={`fixed right-full z-20 dark:bg-slate-700 bg-white top-48 p-1 font-xl transition-all duration-300 border-2 border-r-0`}
+        className={`fixed flex justify-center items-center right-full z-20 dark:bg-slate-700 bg-white top-48 p-1 font-xl transition-all duration-300 border-2 border-r-0`}
         onClick={() => setOpen(!open)}
       >
+         <BiLayer size={30} className={"p-1  cursor-pointer"} />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className={` ${open ? 'rotate-180' : 'rotate-0'} h-5 w-5 `}

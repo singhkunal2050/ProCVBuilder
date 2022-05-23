@@ -3,7 +3,6 @@ import ReactToPrint from "react-to-print";
 import { useEditor } from "../../context/EditorContext";
 import { useLayout } from "../../context/LayoutContext";
 import {
-  BiLayer,
   BiSave,
   BiUpload,
   BiPrinter,
@@ -25,7 +24,6 @@ export function Header({ state }) {
         className={`fixed top-[72px] left-0 min-h-screen w-[50px] dark:bg-slate-700 bg-white z-10  transition-all duration-300 `}
       >
         <div className="py-4 max-h-screen  overflow-y-auto flex items-center flex-col gap-4 ">
-          <BiLayer size={30} className={"p-1  cursor-pointer"} />
           <BiSave size={30} className={"p-1  cursor-pointer"} />
           <BiUpload size={30} className={"p-1  cursor-pointer"} />
           <ReactToPrint

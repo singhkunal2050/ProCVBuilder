@@ -224,7 +224,7 @@ export default function L1({ data }) {
                   <h3 className="text-lg font-bold">{project.name}</h3>
                   <p>{project.stack}</p>
                   <p>
-                    {project.from.substr(0, 7)} - {project.to.substr(0, 7)}
+                    {project?.from?.substr(0, 7)} - {project?.to?.substr(0, 7)}
                   </p>
                   <ul
                     className={`points list-disc ml-6 text-xs marker:text-${accentColor}-700`}

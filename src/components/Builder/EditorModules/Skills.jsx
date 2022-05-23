@@ -12,17 +12,26 @@ export function Skills() {
   const { editor, setEditor } = useEditor();
   const [show, setshow] = useState(false);
 
-  const handleSubmit = (values, actions) => {
-    actions.setSubmitting(true);
-    console.log(values);
+  // const handleSubmit = (values, actions) => {
+  //   actions.setSubmitting(true);
+  //   console.log(values);
 
+  //   setEditor({
+  //     ...editor,
+  //     skills: values.skills,
+  //   });
+  //   console.log(editor);
+  //   actions.setSubmitting(false);
+  // };
+
+  const handleValues = (values) =>{
     setEditor({
       ...editor,
       skills: values.skills,
     });
-    console.log(editor);
-    actions.setSubmitting(false);
-  };
+  }
+
+
   return (
     <div className="pb-4 mb-4 border-b">
       <h3 className="font-bold text-base cursor-pointer p-2 flex gap-2 items-center" onClick={()=>setshow(!show)}>Skills <AiOutlineTool/> </h3>
@@ -30,10 +39,10 @@ export function Skills() {
         <Formik
           initialValues={{ skills: editor.skills }}
           validationSchema={SkillsSchema}
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
         >
           {({ values, errors, touched }) => (
-            <Form>
+            <Form onKeyUp={()=>handleValues(values)}>
               <FieldArray name="skills">
                 {(arrayHelpers) => (
                   <div className="grid grid-cols-2">

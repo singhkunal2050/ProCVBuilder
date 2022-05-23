@@ -19,14 +19,21 @@ export function Projects() {
   const [show, setshow] = useState(false);
   const { editor, setEditor } = useEditor();
 
-  const handleSubmit = (values, actions) => {
-    actions.setSubmitting(true);
+  // const handleSubmit = (values, actions) => {
+  //   actions.setSubmitting(true);
+  //   setEditor({
+  //     ...editor,
+  //     projects: values.projects,
+  //   });
+  //   actions.setSubmitting(false);
+  // };
+
+  const handleValues = (values) => {
     setEditor({
       ...editor,
       projects: values.projects,
     });
-    actions.setSubmitting(false);
-  };
+  }
 
   return (
     <div className="pb-4 mb-4 border-b">
@@ -40,10 +47,10 @@ export function Projects() {
         <Formik
           initialValues={{ projects: editor.projects }}
           validationSchema={ArrayOfProjectsSchema}
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
         >
           {({ values, errors, touched }) => (
-            <Form>
+            <Form onKeyUp={()=>handleValues(values)} onMouseDown={()=>handleValues(values)}>
               <FieldArray name="projects">
                 {(arrayHelpers) => (
                   <div>
