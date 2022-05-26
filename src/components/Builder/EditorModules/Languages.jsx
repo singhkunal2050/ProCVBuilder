@@ -13,17 +13,33 @@ export function Languages() {
   const { editor, setEditor } = useEditor();
   const [show, setshow] = useState(false);
 
-  const handleSubmit = (values, actions) => {
-    actions.setSubmitting(true);
-    console.log(values);
+  // const handleSubmit = (values, actions) => {
+  //   actions.setSubmitting(true);
+  //   console.log(values);
 
+  //   setEditor({
+  //     ...editor,
+  //     languages: values.languages,
+  //   });
+  //   console.log(editor);
+  //   actions.setSubmitting(false);
+  // };
+
+
+  const handleValues = (values) =>{
+    let languages = values.languages.filter(language=>language.trim()!=="");
+    console.log(values)
     setEditor({
       ...editor,
-      languages: values.languages,
+      languages: languages,
     });
-    console.log(editor);
-    actions.setSubmitting(false);
-  };
+  }
+
+  const deleteAndUpdate = (arrayHelpers, index,values) =>{
+    arrayHelpers.remove(index);
+    handleValues(values)
+  }
+
   return (
     <div className="pb-4 mb-4 border-b">
       <h3 className="font-bold text-base cursor-pointer p-2 flex gap-2 items-center" onClick={()=>setshow(!show)}>Languages <FaLanguage/> </h3>
@@ -31,10 +47,10 @@ export function Languages() {
         <Formik
           initialValues={{ languages: editor.languages }}
           validationSchema={LanguagesSchema}
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
         >
           {({ values, errors, touched }) => (
-            <Form>
+            <Form  onKeyUp={()=>handleValues(values)}>
               <FieldArray name="languages">
                 {(arrayHelpers) => (
                   <div className="grid grid-cols-2">
@@ -44,22 +60,23 @@ export function Languages() {
                           {index === 0 && (
                             <button
                               type="button"
-                              className="col-span-2 p-2 flex gap-2 items-center  "
+                              className="col-span-2 p-2 flex gap-2 items-center "
                               onClick={() => arrayHelpers.insert(index, "")} // insert an empty string at a position
                             >
-                              Add Skill
+                              Add Languaage
                               <AiOutlinePlus />
                             </button>
                           )}
 
-                          <div key={index} className="flex gap-2 items-center">
+                          <div key={index} className="flex relative gap-2 items-center mr-6">
                             <Field
                               name={`languages.${index}`}
                               className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 max-w-[120px]  py-1 rounded-lg px-2 border-b-2 mb-2"
                             />
                             <button
+                              className="absolute right-[-10px] top-[8px]"
                               type="button"
-                              onClick={() => arrayHelpers.remove(index)} // remove a friend from the list
+                              onClick={() =>  deleteAndUpdate(arrayHelpers, index,values)} // remove a friend from the list
                             >
                               <AiOutlineClose />
                             </button>
@@ -75,14 +92,14 @@ export function Languages() {
                         Add a Skill <AiOutlinePlus />
                       </button>
                     )}
-                    <div className="flex flex-col mb-2 col-span-2 mt-2">
+                    {/* <div className="flex flex-col mb-2 col-span-2 mt-2">
                       <button
                         type="submit"
                         className="rounded bg-gradient-to-r from-emerald-500 to-fuchsia-500 text-white p-2 font-semibold text-sm"
                       >
                         Update
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                 )}
               </FieldArray>

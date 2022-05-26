@@ -25,8 +25,8 @@ export function Skills() {
   // };
 
   const handleValues = (values) =>{
-    let skills = values.skills.filter(skill=>skill!=="");
-    console.log(skills)
+    let skills = values.skills.filter(skill=>skill.trim()!=="");
+    // console.log(skills)
     setEditor({
       ...editor,
       skills: skills,
