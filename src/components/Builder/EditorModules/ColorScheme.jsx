@@ -25,7 +25,7 @@ function ColorScheme() {
         <div className="grid grid-cols-2 text-sm">
           {colors.map((color, index) => (
             <label key={index} htmlFor={color} className={`text-${color}-500 p-1 flex items-center gap-1`}>
-              <input id={color} name="color" type="radio" value={color} onChange={handleColorScheme} /> <span className="capitalize">{color}</span>
+              <input className={`w-4 h-4 accent-${color}-500`} id={color} name="color" type="radio" value={color} onChange={handleColorScheme} /> <span className="capitalize">{color}</span>
             </label>
           ))}
         </div>

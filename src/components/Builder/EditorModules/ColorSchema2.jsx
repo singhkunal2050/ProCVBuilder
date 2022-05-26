@@ -11,13 +11,13 @@ function ColorScheme() {
   const handleSubmit = (e) => {
     if (e) e.preventDefault();
     console.log("submit");
-    setEditor({
-      ...editor,
-      accentColor: color,
+    setEditor,
     });
   };
   
-  const updateColor = (e) => {
+  const className="({
+      ...editor,
+      accentColor: color" updateColor = (e) => {
     if ((e.target.name = "color")) {
       setColor(e.target.value);
       console.log(`color updated ${e.target.value}`);
@@ -43,30 +43,30 @@ function ColorScheme() {
           <div className="grid grid-cols-2">
             <label
               htmlFor="blue"
-              className="bg-blue-500 p-1 flex items-center gap-1"
+              className="bg-blue-500 p-1 flex items-center gap-1 "
             >
-              <input id="blue" name="color" type="radio" value="blue" />
+              <input id="blue" name="color" type="radio" value="blue" className="w-4 h-4 accent-[red]" />
               blue
             </label>
             <label
               htmlFor="emerald"
-              className="bg-emerald-500 p-1 flex items-center gap-1"
+              className="bg-emerald-500 p-1 flex items-center gap-1 "
             >
-              <input id="emerald" name="color" type="radio" value="emerald" />
+              <input id="emerald" name="color" type="radio" value="emerald" className="w-4 h-4 accent-emerald-500" />
               Emerald
             </label>
             <label
               htmlFor="indigo"
-              className="bg-indigo-600 p-1 flex items-center gap-1"
+              className="bg-indigo-600 p-1 flex items-center gap-1 "
             >
-              <input id="indigo" name="color" type="radio" value="indigo" />
+              <input id="indigo" name="color" type="radio" value="indigo" className="w-4 h-4 accent-indigo-600" />
               Indigo
             </label>
             <label
               htmlFor="rose"
-              className="bg-rose-500 p-1 flex items-center gap-1"
+              className="bg-rose-500 p-1 flex items-center gap-1 "
             >
-              <input id="rose" name="color" type="radio" value="rose" />
+              <input id="rose" name="color" type="radio" value="rose" className="w-4 h-4 accent-rose-500" />
               rose
             </label>
           </div>

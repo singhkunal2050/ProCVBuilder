@@ -5,6 +5,8 @@ import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import { CgWorkAlt } from "react-icons/cg";
 import { useEditor } from "../../../context/EditorContext";
 import * as Yup from "yup";
+import {Editor, EditorState} from 'draft-js';
+import 'draft-js/dist/Draft.css';
 
 const ProjectSchema = Yup.object().shape({
   name: Yup.string().required(),
@@ -14,6 +16,16 @@ const ProjectSchema = Yup.object().shape({
   highlights : Yup.string().required(),
 });
 const ArrayOfProjectsSchema = Yup.array().of(ProjectSchema);
+
+function MyEditor() {
+  const [editorState, setEditorState] = React.useState(
+    () => EditorState.createEmpty(),
+  );
+  return <>
+    <p>lorem</p>
+  <Editor editorState={editorState} onChange={setEditorState} />
+  </>
+}
 
 export function Projects() {
   const [show, setshow] = useState(false);
@@ -29,6 +41,7 @@ export function Projects() {
   // };
 
   const handleValues = (values) => {
+    console.log(values)
     setEditor({
       ...editor,
       projects: values.projects,
@@ -66,6 +79,7 @@ export function Projects() {
                             index={index}
                           />
                         </div>
+                        
                       ))
                     ) : (
                       <div>
@@ -75,12 +89,6 @@ export function Projects() {
                   </div>
                 )}
               </FieldArray>
-              <button
-                type="submit"
-                className="rounded bg-gradient-to-r mt-4 w-full from-emerald-500 to-fuchsia-500 text-white p-2 font-semibold text-sm"
-              >
-                Update
-              </button>
             </Form>
           )}
         </Formik>
@@ -135,11 +143,13 @@ function GroupedInput({ remove, index }) {
         placeholder="Year To"
         name={`projects.${index}.to`}
       />
-      {/* <Field
-        className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
+      <Field
+        as="textarea"
+        className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full min-h-[150px] "
         placeholder="Highlights"
         name={`projects.${index}.hightlights`}
-      /> */}
+      />
+      <MyEditor/>
     </div>
   );
 }
