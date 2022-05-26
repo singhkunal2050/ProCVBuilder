@@ -40,7 +40,6 @@ export function Languages() {
     handleValues(values)
   }
 
-  console.log('rerender')
   return (
     <div className="pb-4 mb-4 border-b">
       <h3 className="font-bold text-base cursor-pointer p-2 flex gap-2 items-center" onClick={()=>setshow(!show)}>Languages <FaLanguage/> </h3>
