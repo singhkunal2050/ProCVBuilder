@@ -22,7 +22,6 @@ function MyEditor() {
     () => EditorState.createEmpty(),
   );
   return <>
-    <p>lorem</p>
   <Editor editorState={editorState} onChange={setEditorState} />
   </>
 }
