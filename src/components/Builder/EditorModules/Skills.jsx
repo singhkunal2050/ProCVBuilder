@@ -25,12 +25,19 @@ export function Skills() {
   // };
 
   const handleValues = (values) =>{
+    let skills = values.skills.filter(skill=>skill!=="");
+    console.log(skills)
     setEditor({
       ...editor,
-      skills: values.skills,
+      skills: skills,
     });
   }
 
+  const deleteAndUpdate = (arrayHelpers, index,values) =>{
+    arrayHelpers.remove(index);
+    handleValues(values)
+  }
+  
   return (
     <div className="pb-4 mb-4 border-b">
       <h3 className="font-bold text-base cursor-pointer p-2 flex gap-2 items-center" onClick={()=>setshow(!show)}>Skills <AiOutlineTool/> </h3>
@@ -52,25 +59,26 @@ export function Skills() {
                             <button
                               type="button"
                               className="col-span-2 p-2 flex gap-2 items-center  "
-                              onClick={() => arrayHelpers.insert(index, "")} // insert an empty string at a position
+                              onClick={() =>arrayHelpers.insert(index, "")} // insert an empty string at a position
                             >
                               Add Skill
                               <AiOutlinePlus />
                             </button>
                           )}
 
-                          <div key={index} className="flex gap-2 items-center">
-                            <Field
-                              name={`skills.${index}`}
-                              className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 max-w-[120px]  py-1 rounded-lg px-2 border-b-2 mb-2"
-                            />
-                            <button
-                              type="button"
-                              onClick={() => arrayHelpers.remove(index)} // remove a friend from the list
-                            >
-                              <AiOutlineClose />
-                            </button>
-                          </div>
+                          <div key={index} className="flex relative gap-2 items-center mr-6">
+                              <Field
+                                name={`skills.${index}`}
+                                className="bg-slate-100 pr-7 border-b-slate-500 dark:bg-slate-600 max-w-[120px]  py-1 rounded-lg px-2 border-b-2 mb-2"
+                              />
+                              <button
+                                className="absolute right-[-10px] top-[8px]"
+                                type="button"
+                                onClick={() => { deleteAndUpdate(arrayHelpers, index,values) }} // remove a friend from the list
+                              >
+                                <AiOutlineClose />
+                              </button>
+                            </div>
                         </div>
                       ))
                     ) : (
@@ -82,14 +90,14 @@ export function Skills() {
                         Add a Skill <AiOutlinePlus />
                       </button>
                     )}
-                    <div className="flex flex-col mb-2 col-span-2 mt-2">
+                    {/* <div className="flex flex-col mb-2 col-span-2 mt-2">
                       <button
                         type="submit"
                         className="rounded bg-gradient-to-r from-emerald-500 to-fuchsia-500 text-white p-2 font-semibold text-sm"
                       >
                         Update
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                 )}
               </FieldArray>
