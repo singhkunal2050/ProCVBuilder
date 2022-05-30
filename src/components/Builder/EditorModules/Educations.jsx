@@ -27,6 +27,13 @@ export function Educations() {
     actions.setSubmitting(false);
   };
 
+  const handleValues = (values) => {
+    setEditor({
+      ...editor,
+      educations: values.educations,
+    });
+  };
+
   return (
     <div className="pb-4 mb-4 border-b">
       <div onClick={() => setshow(!show)} className="flex items-center justify-between">
@@ -41,10 +48,10 @@ export function Educations() {
         <Formik
           initialValues={{ educations: editor.educations }}
           validationSchema={ArrayOfEducationsSchema}
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
         >
           {({ values, errors, touched }) => (
-            <Form>
+            <Form onKeyUp={()=>handleValues(values)}>
               <FieldArray name="educations">
                 {(arrayHelpers) => (
                   <div>
@@ -69,12 +76,12 @@ export function Educations() {
                   </div>
                 )}
               </FieldArray>
-              <button
+              {/* <button
                 type="submit"
                 className="rounded bg-gradient-to-r mt-4 w-full from-emerald-500 to-fuchsia-500 text-white p-2 font-semibold text-sm"
               >
                 Update
-              </button>
+              </button> */}
             </Form>
           )}
         </Formik>

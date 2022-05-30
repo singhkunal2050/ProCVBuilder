@@ -1,5 +1,5 @@
 import { FaFacebook, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
-import { FaStar } from "react-icons/fa";
+// import { FaStar } from "react-icons/fa";
 import { useEditor } from "../../context/EditorContext"
 
 export default function L1({ data }) {
@@ -191,13 +191,13 @@ export default function L1({ data }) {
               Certifications
             </h2>
 
-            {certifications.map((cert, index) => {
+            {certifications.filter(cert=>cert.name.trim()!=='' && cert.institute.trim()!=="").map((cert, index) => {
               return (
                 <article key={index} className={`p-2`}>
                   <h3 className="text-lg font-bold">{cert.name}</h3>
                   <p>{cert.institute}</p>
                   <p>{cert.year.substr(0, 7)}</p>
-                  <div
+                  {/* <div
                     className={`stars text-${accentColor}-700 flex gap-1 text-xs`}
                   >
                     <FaStar />
@@ -205,7 +205,7 @@ export default function L1({ data }) {
                     <FaStar />
                     <FaStar />
                     <FaStar />
-                  </div>
+                  </div> */}
                 </article>
               );
             })}

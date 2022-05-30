@@ -17,14 +17,21 @@ function Certifications() {
   const [show, setshow] = useState(false);
   const { editor, setEditor } = useEditor();
 
-  const handleSubmit = (values, actions) => {
-    actions.setSubmitting(true);
+  // const handleSubmit = (values, actions) => {
+  //   actions.setSubmitting(true);
+  //   setEditor({
+  //     ...editor,
+  //     certifications: values.certifications,
+  //   });
+  //   actions.setSubmitting(false);
+  // };
+
+  const handleValues = (values) =>{
     setEditor({
       ...editor,
       certifications: values.certifications,
     });
-    actions.setSubmitting(false);
-  };
+  }
 
   return (
     <div className="pb-4 mb-4 border-b">
@@ -42,10 +49,10 @@ function Certifications() {
         <Formik
           initialValues={{ certifications: editor.certifications }}
           validationSchema={ArrayOfCertificationsSchema}
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
         >
           {({ values, errors, touched }) => (
-            <Form>
+            <Form onKeyUp={()=>handleValues(values)} onClick={()=>handleValues(values)}>
               <FieldArray name="certifications">
                 {(arrayHelpers) => (
                   <div>
@@ -70,12 +77,12 @@ function Certifications() {
                   </div>
                 )}
               </FieldArray>
-              <button
+              {/* <button
                 type="submit"
                 className="rounded bg-gradient-to-r mt-4 w-full from-emerald-500 to-fuchsia-500 text-white p-2 font-semibold text-sm"
               >
                 Update
-              </button>
+              </button> */}
             </Form>
           )}
         </Formik>
