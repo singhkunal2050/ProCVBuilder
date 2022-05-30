@@ -5,7 +5,7 @@ import ColorScheme from './EditorModules/ColorScheme'
 import { BiBook } from "react-icons/bi"
 
 export function Editor() {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(window.innerWidth>768)
     return (
         <section className={`fixed top-[72px] right-0 min-h-screen w-[300px] dark:bg-slate-900 border-l-2 border-l-gray-500 bg-gray-100 z-10 transition-all duration-300 ${open ? 'translate-x-0' : 'translate-x-full'}`}>
             <button className={` flex justify-center items-center fixed right-full z-20 border-2 border-gray-500 border-r-0 dark:bg-slate-900 bg-gray-100 top-32 p-1 font-xl transition-all duration-300`} onClick={() => setOpen(!open)}>
@@ -14,7 +14,7 @@ export function Editor() {
                     <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
             </button>
-            <div className='p-4 pb-32 max-h-screen  overflow-y-auto '>
+            <div className='p-4 pb-32 max-h-screen  overflow-y-auto editor-container '>
                 <ColorScheme/>
                 <Personal />
                 <Skills />

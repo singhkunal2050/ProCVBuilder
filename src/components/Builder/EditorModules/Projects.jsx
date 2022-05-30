@@ -1,12 +1,12 @@
 import { Field, FieldArray, Form, Formik } from "formik";
 import React from "react";
 import { useState } from "react";
+import { BiChevronDown , BiChevronUp } from "react-icons/bi";
 import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import { CgWorkAlt } from "react-icons/cg";
 import { useEditor } from "../../../context/EditorContext";
 import * as Yup from "yup";
-import {Editor, EditorState} from 'draft-js';
-import 'draft-js/dist/Draft.css';
+import RichTextArea from './RichTextArea'
 
 const ProjectSchema = Yup.object().shape({
   name: Yup.string().required(),
@@ -17,18 +17,10 @@ const ProjectSchema = Yup.object().shape({
 });
 const ArrayOfProjectsSchema = Yup.array().of(ProjectSchema);
 
-function MyEditor() {
-  const [editorState, setEditorState] = React.useState(
-    () => EditorState.createEmpty(),
-  );
-  return <>
-  <Editor editorState={editorState} onChange={setEditorState} />
-  </>
-}
-
 export function Projects() {
   const [show, setshow] = useState(false);
   const { editor, setEditor } = useEditor();
+
 
   // const handleSubmit = (values, actions) => {
   //   actions.setSubmitting(true);
@@ -40,7 +32,7 @@ export function Projects() {
   // };
 
   const handleValues = (values) => {
-    console.log(values)
+    // console.log(values)
     setEditor({
       ...editor,
       projects: values.projects,
@@ -49,12 +41,15 @@ export function Projects() {
 
   return (
     <div className="pb-4 mb-4 border-b">
+      <div onClick={() => setshow(!show)} className="flex items-center justify-between">
+      
       <h3
-        className="font-bold text-base cursor-pointer p-2 flex gap-2 items-center"
-        onClick={() => setshow(!show)}
-      >
+        className="font-bold text-base cursor-pointer p-2 flex gap-2 items-center" >
         Projects <CgWorkAlt />{" "}
       </h3>
+      {show ? <BiChevronUp   />   : <BiChevronDown   />}
+      </div>
+
       <div className={`option text-xs ${!show && "hidden"}`}>
         <Formik
           initialValues={{ projects: editor.projects }}
@@ -148,7 +143,8 @@ function GroupedInput({ remove, index }) {
         placeholder="Highlights"
         name={`projects.${index}.hightlights`}
       />
-      <MyEditor/>
+      <RichTextArea/>
+    
     </div>
   );
 }

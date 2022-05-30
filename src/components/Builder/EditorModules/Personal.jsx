@@ -1,5 +1,6 @@
 import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
+import { BiChevronDown , BiChevronUp } from "react-icons/bi";
 import { useEditor } from "../../../context/EditorContext";
 import { useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";
@@ -47,12 +48,14 @@ export function Personal() {
 
   return (
     <div className="pb-4 mb-4 border-b">
+      <div onClick={() => setshow(!show)} className="flex items-center justify-between">
       <h3
-        className="font-bold text-base cursor-pointer p-2 flex gap-2 items-center"
-        onClick={() => setshow(!show)}
-      >
+        className="font-bold text-base cursor-pointer p-2 flex gap-2 items-center">
         Personal <AiOutlineUser />
       </h3>
+      {show ? <BiChevronUp   />   : <BiChevronDown   />}
+      </div>
+
       <div className={`option text-xs ${!show && "hidden"}`}>
         <Formik
           initialValues={editor.personal}

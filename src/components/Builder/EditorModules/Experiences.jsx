@@ -2,6 +2,7 @@ import { Field, FieldArray, Form, Formik } from "formik";
 // ErrorMessage Component
 import React from "react";
 import { useState } from "react";
+import { BiChevronDown , BiChevronUp } from "react-icons/bi";
 import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import { CgWorkAlt } from "react-icons/cg";
 import { useEditor } from "../../../context/EditorContext";
@@ -31,12 +32,16 @@ export function Experiences() {
 
   return (
     <div className="pb-4 mb-4 border-b">
+      <div onClick={() => setshow(!show)} className="flex items-center justify-between">
       <h3
         className="font-bold text-base cursor-pointer p-2 flex gap-2 items-center"
         onClick={() => setshow(!show)}
       >
         Experiences <CgWorkAlt />{" "}
       </h3>
+      {show ? <BiChevronUp   />   : <BiChevronDown   />}
+        </div>
+
       <div className={`option text-xs ${!show && "hidden"}`}>
         <Formik
           initialValues={{ experiences: editor.experiences }}
