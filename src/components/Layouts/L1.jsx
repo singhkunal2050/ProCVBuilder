@@ -1,5 +1,5 @@
-import { FaFacebook, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 // import { FaStar } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import { useEditor } from "../../context/EditorContext"
 
 export default function L1({ data }) {
