@@ -130,17 +130,7 @@ export default function L1({ data }) {
                   <ul
                     className={`points list-disc ml-6 text-xs marker:text-${accentColor}-700`}
                   >
-                    <li>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Necessitatibus, omnis?
-                    </li>
-                    <li>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Necessitatibus, omnis?
-                    </li>
-                    {experience.hightlights && (
-                      <li>{experience.hightlights}</li>
-                    )}
+                    {experience.hightlights && experience.hightlights.split('\n').map((exp,i) => <li key={i}>{exp}</li>)}
                   </ul>
                 </article>
               ))}

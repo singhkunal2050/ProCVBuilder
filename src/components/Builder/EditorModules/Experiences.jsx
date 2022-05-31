@@ -143,11 +143,12 @@ function GroupedInput({ remove, index }) {
         placeholder="Year To"
         name={`experiences.${index}.to`}
       />
-      {/* <Field
-        className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
+        <Field
+        as="textarea"
+        className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full min-h-[150px] "
         placeholder="Highlights"
         name={`experiences.${index}.hightlights`}
-      /> */}
+      />
     </div>
   );
 }
