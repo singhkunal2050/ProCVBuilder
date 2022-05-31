@@ -5,17 +5,19 @@ import { useLayout } from "../../context/LayoutContext";
 import {
   BiSave,
   BiUpload,
+  BiDownload,
   BiPrinter,
   BiZoomIn,
   BiZoomOut,
 } from "react-icons/bi";
+import { useRef } from "react";
 
 export function Header({ state }) {
   const { resumeRef } = state;
   const { layout } = useLayout();
-  const { updateZoom } = useEditor();
+  const { updateZoom , downloadEditorState, uploadEditorState } = useEditor();
+  const FileUploadRef = useRef();
 //  console.log(zoom)
-
 
   return (
     <section className="max-w-4xl flex justify-between my-4  ml-[60px] lg:mx-auto ">
@@ -25,7 +27,8 @@ export function Header({ state }) {
       >
         <div className="py-4 max-h-screen  overflow-y-auto flex items-center flex-col gap-4 ">
           <BiSave size={30} className={"p-1  cursor-pointer"} />
-          <BiUpload size={30} className={"p-1  cursor-pointer"} />
+          <BiUpload size={30} className={"p-1  cursor-pointer"} onClick={()=>FileUploadRef.current.click()} />
+          <input ref={FileUploadRef} type="file" accept=".json" id="imgupload" style={{display:"none"}} onChange={uploadEditorState} /> 
           <ReactToPrint
             trigger={() => (
               <BiPrinter
@@ -45,6 +48,7 @@ export function Header({ state }) {
             className={"p-1  cursor-pointer"}
             onClick={() => updateZoom("+")}
           />
+          <BiDownload size={30} className={"p-1  cursor-pointer"} onClick={downloadEditorState} />
         </div>
       </section>
     </section>

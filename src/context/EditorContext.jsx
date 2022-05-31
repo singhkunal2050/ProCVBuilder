@@ -6,22 +6,20 @@ export const useEditor = () => {
   return useContext(EditorContext);
 };
 
-
 export function EditorProvider(props) {
-  const [zoom, setZoom] = useState(.9);
+  const [zoom, setZoom] = useState(0.9);
 
-    const updateZoom = (operation) => {
-      if (operation === "+") {
-        if (zoom <= 1.5) {
-          setZoom(zoom + 0.1);
-        }
-      } else {
-        if (zoom >= 0.5) {
-          setZoom(zoom - 0.1);
-        }
+  const updateZoom = (operation) => {
+    if (operation === "+") {
+      if (zoom <= 1.5) {
+        setZoom(zoom + 0.1);
       }
-    };
-
+    } else {
+      if (zoom >= 0.5) {
+        setZoom(zoom - 0.1);
+      }
+    }
+  };
 
   const [editor, setEditor] = useState({
     accentColor: "rose",
@@ -108,14 +106,47 @@ export function EditorProvider(props) {
       },
     ],
     languages: ["English", "Hindi", "Marathi"],
-    hightlights:''  
+    hightlights: "",
   });
+
+  const downloadEditorState = async () => {
+    const download = {
+      ...editor,
+    };
+    const href = `data:text/json;charset=utf-8,${encodeURIComponent(
+      JSON.stringify(download)
+    )}`;
+    const link = document.createElement("a");
+    link.href = href;
+    link.download = "cv.json";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    console.log(download);
+  };
+
+  const uploadEditorState = (e) => {
+    console.log(e.target.files[0])
+    let reader = new FileReader();
+    reader.onload = logFile;
+    reader.readAsText(e.target.files[0]);
+  } 
+  
+  function logFile (event) {
+    let str = event.target.result;
+    let json = JSON.parse(str);
+    console.log(json)
+    setEditor(json)
+    // setEditor(...json)
+  }
 
   const value = {
     editor,
     setEditor,
     zoom,
-    updateZoom
+    updateZoom,
+    downloadEditorState,
+    uploadEditorState
   };
 
   return (
