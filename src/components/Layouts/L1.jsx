@@ -32,7 +32,7 @@ export default function L1({ data }) {
   return (
     <section
       style={{ transform: `scale(${zoom})` }}
-      className={` layout border-2 border-${accentColor}-300 min-h-[1050px] dark:bg-slate-800 dark:text-gray-200 flex-1 p-2 shadow-xl origin-top-left`}
+      className={` layout min-h-[1050px] dark:bg-slate-800 dark:text-gray-200 flex-1 p-4 shadow-xl origin-top`}
     >
       <div className="bg-rose-600 text-rose-600 border-rose-600 marker:text-rose-700 hidden">
         <div className="bg-rose-500 text-rose-500 border-rose-500"></div>

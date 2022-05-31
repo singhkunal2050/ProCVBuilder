@@ -17,12 +17,12 @@ export function Editor() {
             <div className='p-4 pb-32 max-h-screen  overflow-y-auto editor-container '>
                 <ColorScheme/>
                 <Personal />
-                <Skills />
-                <Languages />
-                <Certifications />
-                <Educations />
                 <Experiences />
+                <Educations />
+                <Skills />
+                <Certifications />
                 <Projects />
+                <Languages />
             </div>
         </section>
     )

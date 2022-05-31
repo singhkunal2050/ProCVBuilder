@@ -21,7 +21,7 @@ export function Header({ state }) {
 
   return (
     <section className="max-w-4xl flex justify-between my-4  ml-[60px] lg:mx-auto ">
-      <h6 className="pb-2 font-xl ">{layout.name}</h6>
+      <h6 className="pb-2 font-xl mx-auto text-center">{layout.name}</h6>
       <section
         className={`fixed top-[72px] left-0 min-h-screen w-[50px] dark:bg-slate-700 bg-white z-10  transition-all duration-300 `}
       >

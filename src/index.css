@@ -27,6 +27,10 @@ code {
   border:0;
 }
 
+.layout{
+  transition: 600ms ease-in-out transform;
+}
+
 @media print
 {
     .layout { border-block:  none !important; box-shadow: none !important; min-height: 100vh; transform: scale(1) !important; } 
