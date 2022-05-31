@@ -101,9 +101,10 @@ function AddExperiencesButton({ push }) {
     <button
       onClick={() =>
         push({
-          name: "",
-          institute: "",
-          year: "",
+          companyName: "",
+          role: "",
+          from: "",
+          to:""
         })
       }
       type="button"

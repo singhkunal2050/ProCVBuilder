@@ -97,8 +97,10 @@ function AddProjectsButton({ push }) {
       onClick={() =>
         push({
           name: "",
-          institute: "",
-          year: "",
+          stack: "",
+          from: "",
+          to: "",
+          hightlights: "",
         })
       }
       type="button"
@@ -117,12 +119,12 @@ function GroupedInput({ remove, index }) {
       </button>
       <Field
         className=" bg-slate-100 border-b-slate-500 mt-2  dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
-        placeholder="Course Name"
+        placeholder="Project Name"
         name={`projects.${index}.name`}
       />
       <Field
         className="bg-slate-100 border-b-slate-500 dark:bg-slate-600 focus:outline-none border-b p-2 w-full "
-        placeholder="College/University Name"
+        placeholder="Stack"
         name={`projects.${index}.stack`}
       />
       <Field

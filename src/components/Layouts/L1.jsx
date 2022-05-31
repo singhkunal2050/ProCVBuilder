@@ -124,8 +124,8 @@ export default function L1({ data }) {
                   </h3>
                   <p>{experience.role}</p>
                   <p>
-                    {experience.from.substr(0, 7)} -{" "}
-                    {experience.to.substr(0, 7)}
+                    {experience?.from?.substr(0, 7)} -{" "}
+                    {experience?.to?.substr(0, 7)}
                   </p>
                   <ul
                     className={`points list-disc ml-6 text-xs marker:text-${accentColor}-700`}
@@ -159,8 +159,8 @@ export default function L1({ data }) {
                   <h3 className="text-lg font-bold">{education.name}</h3>
                   <p>{education.institute}</p>
                   <p>
-                    {education.year_from.substr(0, 7)} -{" "}
-                    {education.year_to.substr(0, 7)}
+                    {education?.year_from?.substr(0, 7)} -{" "}
+                    {education?.year_to?.substr(0, 7)}
                   </p>
                 </article>
               ))}

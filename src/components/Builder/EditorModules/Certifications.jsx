@@ -9,7 +9,7 @@ import * as Yup from "yup";
 const CertificationSchema = Yup.object().shape({
   name: Yup.string().required(),
   institute: Yup.string().required(),
-  year: Yup.number().required().positive().integer().min(2000).max(2022),
+  year: Yup.date()
 });
 const ArrayOfCertificationsSchema = Yup.array().of(CertificationSchema);
 

@@ -9,8 +9,8 @@ import * as Yup from "yup";
 const EducationSchema = Yup.object().shape({
   name: Yup.string().required(),
   institute: Yup.string().required(),
-  year_from: Yup.number().required().positive().integer().min(2000).max(2022),
-  year_to: Yup.number().required().positive().integer().min(2000).max(2022),
+  year_from: Yup.date(),
+  year_to: Yup.date(),
 });
 const ArrayOfEducationsSchema = Yup.array().of(EducationSchema);
 
@@ -18,16 +18,18 @@ export function Educations() {
   const [show, setshow] = useState(false);
   const { editor, setEditor } = useEditor();
 
-  const handleSubmit = (values, actions) => {
-    actions.setSubmitting(true);
-    setEditor({
-      ...editor,
-      educations: values.educations,
-    });
-    actions.setSubmitting(false);
-  };
+  // const handleSubmit = (values, actions) => {
+  //   actions.setSubmitting(true);
+  //   setEditor({
+  //     ...editor,
+  //     educations: values.educations,
+  //   });
+  //   actions.setSubmitting(false);
+  // };
 
   const handleValues = (values) => {
+    console.log(values.educations)
+    console.log(editor)
     setEditor({
       ...editor,
       educations: values.educations,
@@ -97,7 +99,8 @@ function AddEducationsButton({ push }) {
         push({
           name: "",
           institute: "",
-          year: "",
+          year_from: "",
+          year_to: "",
         })
       }
       type="button"
