@@ -229,7 +229,7 @@ export default function L1({ data }) {
                   <ul
                     className={`points list-disc ml-6 text-xs marker:text-${accentColor}-700`}
                   >
-                    {project.hightlights && project.hightlights.split('\n').map(proj => <li key={proj}>{proj}</li>)}
+                    {project.hightlights && project.hightlights.split('\n').map((proj,i) => <li key={i}>{proj}</li>)}
                   </ul>
                 </article>
               ))}

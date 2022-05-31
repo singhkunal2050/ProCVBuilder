@@ -12,6 +12,8 @@ function RichTextArea() {
     }
   ]);
 
+  console.log(editor)
+
   return (
     <div className="App">
       <Slate

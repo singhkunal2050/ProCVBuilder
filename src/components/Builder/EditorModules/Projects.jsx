@@ -6,7 +6,7 @@ import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import { CgWorkAlt } from "react-icons/cg";
 import { useEditor } from "../../../context/EditorContext";
 import * as Yup from "yup";
-import RichTextArea from './RichTextArea'
+// import RichTextArea from './RichTextArea'
 
 const ProjectSchema = Yup.object().shape({
   name: Yup.string().required(),
@@ -145,7 +145,7 @@ function GroupedInput({ remove, index }) {
         placeholder="Highlights"
         name={`projects.${index}.hightlights`}
       />
-      <RichTextArea/>
+      {/* <RichTextArea/> */}
     
     </div>
   );
